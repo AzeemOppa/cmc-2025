@@ -1,5 +1,5 @@
 .PHONY: all
-all: build/lecture-01.pdf build/lecture-02.pdf build/lecture-03.pdf build/lecture-04.pdf
+all: build/lecture-01.pdf build/lecture-02.pdf build/lecture-03.pdf build/lecture-04.pdf build/lecture-05.pdf
 
 build:
 	mkdir -p $@
@@ -19,6 +19,10 @@ build/lecture-03.pdf: code/latex/lecture-03.tex | build
 	$(LATEX_COMPILER) -output-directory=$| $<
 
 build/lecture-04.pdf: code/latex/lecture-04.tex | build
+	$(LATEX_COMPILER) -output-directory=$| $<
+	$(LATEX_COMPILER) -output-directory=$| $<
+
+build/lecture-05.pdf: code/latex/lecture-05.tex | build
 	$(LATEX_COMPILER) -output-directory=$| $<
 	$(LATEX_COMPILER) -output-directory=$| $<
 
@@ -46,6 +50,9 @@ build/website/lecture-03.pdf: build/lecture-03.pdf | build/website
 	cp $< $|
 
 build/website/lecture-04.pdf: build/lecture-04.pdf | build/website
+	cp $< $|
+
+build/website/lecture-05.pdf: build/lecture-05.pdf | build/website
 	cp $< $|
 
 .PHONY: website_clean
