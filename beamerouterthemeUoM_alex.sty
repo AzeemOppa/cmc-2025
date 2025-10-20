@@ -1,0 +1,164 @@
+% (Unofficial) University of Manchester Beamer Theme
+% Based upon the official PowerPoint styling.
+% -------------------------------------------
+% Authors: <andrew.mundy@cs.man.ac.uk>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Calculate lengths
+\newlength{\logowidth}
+\newlength{\logoheight}
+\newlength{\logopad}
+\newlength{\footerpos}
+\setlength{\logowidth}{20mm}
+\setlength\logoheight{0.4347\logowidth}	% 20/46 ~= 0.4347
+\setlength\logopad{0.7391\logoheight}	% 170/230 ~= 0.7391
+\setlength\footerpos\paperwidth
+\addtolength\footerpos{-1em}
+
+%% Modify lengths, if compressed
+\ifbeamer@compress
+	\setlength{\logopad}{.5\logopad}
+\fi
+
+%% Side Margins
+\newlength{\sidemargin}
+\setlength{\sidemargin}{1.25\logopad}
+
+\setbeamersize{
+	text margin left=\sidemargin,
+	text margin right=\sidemargin,
+}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare Images
+\pgfdeclareimage[width=\logowidth]{UoMlogo-white}{TAB_allwhite}
+\pgfdeclareimage[width=\logowidth]{UoMlogo-colour}{TAB_col_white_background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare Shadings
+{
+	\pgfdeclareradialshading{UoMbg}{\pgfpoint{0mm}{0mm}}{%
+		color(0mm)=(uompurple);
+		color(.5\paperwidth)=(uompurple!60!black);
+		color(\paperwidth)=(uompurple!60!black)
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Put navigation on left
+\defbeamertemplate*{navigation symbols}{UoM_alex}{\makebox[\paperwidth][l]{\hspace{1em}\hbox{\insertslidenavigationsymbol}\hbox{\insertframenavigationsymbol}\hbox{\insertsubsectionnavigationsymbol}\hbox{\insertsectionnavigationsymbol}\hbox{\insertdocnavigationsymbol}\hbox{\insertbackfindforwardnavigationsymbol}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Headline
+\defbeamertemplate*{headline}{UoM_alex}{%
+	%% Include the Logo
+	\pgftext[at=\pgfpoint{\logopad}{-\logopad}, top, left]{%
+		\ifthenelse{%
+			\boolean{beamer@dark} \OR
+			\( \boolean{beamer@darktitle} \AND \c@framenumber=\beamer@titleframestart \) \OR
+			\boolean{beamer@darkframe}
+		}{%
+			\pgfuseimage{UoMlogo-white}%
+		}{%
+			\pgfuseimage{UoMlogo-colour}%
+		}%
+	}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Slide Title Text
+\defbeamertemplate*{frametitle}{UoM_alex}{%
+	\ifbeamer@plainframe%
+		\vskip.5\logopad
+	\else%
+		\vskip.95\logoheight%
+		\vskip-\topsep%
+		\hskip0.98\logowidth%
+	\fi%
+	\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}%
+		\insertframetitle\par%
+	\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}%
+		\insertframesubtitle
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Frame Numbering and Footline
+\defbeamertemplate*{footline}{UoM_alex}{%
+	\ifbeamer@framenumber%
+		\ifnum\c@framenumber=\beamer@titleframestart\else%
+			\pgftext[base, right, at=\pgfpoint{\footerpos}{1em}]{%
+				\usebeamercolor[fg]{framenumber}%
+				\usebeamerfont{framenumber}%
+				\insertframenumber{}%
+				\ifbeamer@totalframenumber%
+					/\inserttotalframenumber
+				\fi%
+			}
+		\fi
+	\fi%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title Slide
+\defbeamertemplate*{title page}{UoM_alex}{%
+	% This is slide 0
+	\setcounter{framenumber}{\beamer@titleframestart}
+	% Skip the required amount of space
+	\vskip3\logopad%
+	% Input the title
+	\usebeamerfont{title}%
+	\usebeamercolor[fg]{title}%
+	\begin{minipage}[b][2\baselineskip][b]{\textwidth}%
+		\raggedright%
+		\inserttitle%
+	\end{minipage}
+	\vskip-.5\baselineskip
+%
+	\begin{pgfpicture}
+		\pgfsetlinewidth{2pt}
+		\pgfsetroundcap
+		\pgfsetdash{{0pt}{4pt}}{0cm}
+
+		\pgfpathmoveto{\pgfpoint{0mm}{0mm}}
+		\pgfpathlineto{\pgfpoint{\textwidth}{0mm}}
+
+		\pgfusepath{stroke}
+	\end{pgfpicture}
+%
+	\vskip.4\baselineskip
+	\usebeamerfont{subtitle}%
+	\begin{minipage}{\textwidth}
+		\raggedright%
+		\insertsubtitle%
+	\end{minipage}\vskip.25\baselineskip
+	\vfill
+%
+	\usebeamerfont{author}%
+	\begin{minipage}{\textwidth}
+		\raggedright%
+		\insertauthor%
+	\end{minipage}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Slide Background
+\defbeamertemplate*{background canvas}{UoM_alex}{%
+	\ifthenelse{%
+		\boolean{beamer@dark} \OR
+		\( \boolean{beamer@darktitle} \AND \c@framenumber=\beamer@titleframestart \) \OR
+		\boolean{beamer@darkframe}
+	}{%
+		\pgftext[center, at=\pgfpoint{.5\paperwidth}{-.5\paperheight}]{%
+			\pgfuseshading{UoMbg}%
+		}
+	}{}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
