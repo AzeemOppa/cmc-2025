@@ -1,0 +1,38 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1
+{
+  padding-top: 4em;
+}
+
+p
+{
+  margin: 2em 0;
+}
+
+br
+{
+  display: block;
+  content: "";
+  margin-top: 0;
+}
+
+td, th
+{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.centered-table
+{
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse; /* Optional, makes borders look better */
+  border: 1px solid #000; /* Optional, adds border */
+}

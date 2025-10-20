@@ -1,0 +1,22 @@
+name: Is GitHub Pages enabled?
+
+on:
+  workflow_call:
+    outputs:
+      enabled:
+        description: "Whether the 'github-pages' environment is enabled."
+        value: ${{ jobs.check-pages-status.outputs.enabled }}
+
+jobs:
+  check-pages-status:
+    name: Is GitHub Pages enabled?
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.check-pages.outputs.enabled }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check if GitHub Pages is enabled
+        id: check-pages
+        run: bash .github/scripts/check-pages-enabled.sh

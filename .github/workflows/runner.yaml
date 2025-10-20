@@ -1,0 +1,45 @@
+name: Run all jobs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  set-retention-days:
+    name: Set retention days
+    outputs:
+      retention_days: ${{ steps.set.outputs.retention_days }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set retention days based on repository visibility
+        id: set
+        run: |
+          if [[ "${{ github.event.repository.private }}" == "true" ]]; then
+            echo "retention_days=1" >> $GITHUB_OUTPUT
+          else
+            echo "retention_days=7" >> $GITHUB_OUTPUT
+          fi
+          cat $GITHUB_OUTPUT
+
+  build-website:
+    name: Build website
+    needs: set-retention-days
+    uses: ./.github/workflows/build-website.yaml
+    with:
+      retention_days: ${{ needs.set-retention-days.outputs.retention_days }}
+
+  check-pages-status:
+    name: Check GitHub Pages status
+    uses: ./.github/workflows/check-pages-status.yaml
+
+  deploy-website:
+    name: Deploy website
+    needs: [build-website, check-pages-status]
+    if: needs.check-pages-status.outputs.enabled == 'true'
+    uses: ./.github/workflows/deploy-website.yaml
