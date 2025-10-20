@@ -1,0 +1,117 @@
+\documentclass[11pt,aspectratio=43,ignorenonframetext,t]{beamer}
+
+% Presentation settings
+\mode<presentation>{
+  \usetheme[framenumber,titleframestart=1]{UoM_alex}
+  \usefonttheme{professionalfonts} % using non standard fonts for beamer
+  \usefonttheme{serif}
+  \usepackage{fontspec}
+  \setmainfont[Ligatures=TeX]{Arial}
+}
+
+% Handout settings
+\mode<article>{
+  \usepackage{fullpage}
+  \usepackage{fontspec}
+  \setmainfont[Ligatures=TeX]{Arial}
+  \setlength{\parskip}{1.5\baselineskip} % correct beamer line spacings
+  \setlength{\parindent}{0cm}
+  \usepackage{enumitem}
+  \setlist[itemize]{topsep=0pt}
+}
+
+ % Packages
+\usepackage{graphicx}
+\graphicspath{{./images/png}} % generic graphics path; overridden if necessary
+\usepackage{amsmath}
+\allowdisplaybreaks[1] % allow eqnarrays to break across pages
+\usepackage{amssymb} 
+\usepackage[HTML]{xcolor}
+\definecolor{uomlinkblue}{HTML}{0071BC}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=uomlinkblue,
+  filecolor=uomlinkblue,      
+  urlcolor=uomlinkblue,
+  pdflang={en-GB},
+}
+\usepackage[document]{ragged2e} % left aligned text for accessibility
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, arrows.meta}
+\usepackage{unicode-math} % unicode maths for accessibility
+\usepackage{pdfcomment}   % for alt text for accessibility
+\usepackage{rotating}     % allow portrait figures and tables
+\usepackage{subfigure}    % allow matrices of figures
+\usepackage{float}        % allows H option on floats to force here placement
+\usepackage{multirow}     % allows merging of rows in tables
+\usepackage{tabularx}     % allows fixed width tables
+\usepackage{ctable}       % modifies \hline for use in table
+\usepackage{bm}           % allow bold fonts in equations
+\usepackage{pgf}          % allow graphics manipulation
+\usepackage{etoolbox}
+  
+% Custom commands
+\newcolumntype{Z}{>{\centering\arraybackslash}X}  % tabularx centered columns 
+
+\makeatletter
+  \DeclareRobustCommand{\em}
+  {
+    \@nomath\em
+    \if b
+      \expandafter\@car\f@series\@nil \normalfont
+    \else
+      \bfseries
+    \fi
+  }
+\makeatother
+
+\makeatletter
+  \preto{\@verbatim}{\topsep=0pt \partopsep=0pt}
+\makeatother
+
+\def\checkmark{
+  \tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;
+}
+
+% Counters
+\newcounter{example_number} % keep track of the example questions
+
+% Frontmatter
+\newcommand{\cmclecture}[1]{
+  \title{Combinatorial Mesh Calculus (CMC): Lecture #1}
+}
+\author{
+  Lectured by:
+  \href{https://scholar.google.com/citations?user=x4R-snQAAAAJ&hl=en}
+  {Dr. Kiprian Berbatov}$^1$\\
+  \smallskip
+  Lecture Notes Compiled by:
+  \href{https://scholar.google.com/citations?user=CoIpITkAAAAJ&hl=en}
+  {Muhammad Azeem}$^1$\\
+  \smallskip
+  Under the supervision of:
+  \href{https://scholar.google.co.uk/citations?user=3nWJe5wAAAAJ&hl=en}
+  {Prof. Andrey P. Jivkov}$^1$\\
+  \smallskip
+  {\tiny $^1$Department of Mechanical and Aerospace Engineering,
+    The University of Manchester, Oxford Road, Manchester M13 9PL, UK}
+}
+
+% Special frames
+\newcommand{\cmctitleframe}{
+  \titlepage
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east] at (current page.south east) {
+      \href{https://youtube.com/@kipi.berbatov}{
+        \includegraphics[width=1.5cm]{youtube-icon.png}
+      }
+    };
+  \end{tikzpicture}
+}
+\newcommand{\cmcendframe}{
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.85\linewidth]{Thanks.png}
+  \end{figure}
+}

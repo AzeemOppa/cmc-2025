@@ -1,115 +1,13 @@
-\documentclass[11pt,aspectratio=43,ignorenonframetext,t]{beamer}
-\usepackage[HTML]{xcolor}
-% Presentation settings
-\mode<presentation>{
-  \usetheme[framenumber,titleframestart=1]{UoM_alex}
-  \usefonttheme{professionalfonts} % using non standard fonts for beamer
-  \usefonttheme{serif}             % set font to Arial
-  \usepackage{fontspec}
-  \setmainfont[Ligatures=TeX]{Arial}
-}
-\definecolor{uomlinkblue}{HTML}{0071BC}
-
-% Handout settings
-\mode<article>{
-  \usepackage{fullpage}                  % use full page
-  \usepackage{fontspec}                  % set font to Arial
-    \setmainfont[Ligatures=TeX]{Arial}
-  \setlength{\parskip}{1.5\baselineskip} % correct beamer line spacings
-  \setlength{\parindent}{0cm}
-  \usepackage{enumitem}
-    \setlist[itemize]{topsep=0pt}
-  % \definecolor{uomlinkblue}{HTML}{0071BC}
-}
-
-
-% Packages
-\usepackage{graphicx}  % for graphics files
-  \graphicspath{ {./images/png} }
-\usepackage{amsmath}   % assumes amsmath package installed
-  \allowdisplaybreaks[1] % allow eqnarrays to break across pages
-\usepackage{amssymb}   % assumes amsmath package installed 
-\usepackage{hyperref} % add hyperlinks to document. Settings are for accessiblity
-  \hypersetup{
-    colorlinks=true,
-    linkcolor=uomlinkblue,
-    filecolor=uomlinkblue,      
-    urlcolor=uomlinkblue,
-	pdflang={en-GB},
-}
-\usepackage[document]{ragged2e} % left aligned text for accessibility
-% experimental - does fundamentally work, if with quite a bit of effort
-%\usepackage{axessibility} % LaTeX readable equations for accessibility
-%  \tagpdfsetup{tabsorder=structure,uncompress,activate-all,interwordspace=true}
-%  \pdfextension catalog{/Lang (en-GB)}
-%  \RequirePackage{luacode}
-%  \directlua{require(axessibility.lua)}
-\usepackage{tikz}
-\usepackage{unicode-math} % unicode maths for accessibility
-\usepackage{pdfcomment} % for alt text for accessibility
-\usepackage{rotating}  % allow portrait figures and tables
-\usepackage{subfigure} % allow matrices of figures
-\usepackage{float}     % allows H option on floats to force here placement
-\usepackage{multirow}  % allows merging of rows in tables
-\usepackage{tabularx}  % allows fixed width tables
-\usepackage{ctable}    % modifies \hline for use in table
-\usepackage{bm}        % allow bold fonts in equations
-\usepackage{pgf}       % allow graphics manipulation
-\usepackage{media9}    % allow interactive flash files to be embedded
-  \addmediapath{../media}
-\usepackage{etoolbox}
-  \makeatletter \preto{\@verbatim}{\topsep=0pt \partopsep=0pt} \makeatother  
-  
-% Custom commands
-\newcommand{\matlab}{\emph{\sc{Matlab}}}
-\newcommand{\maple}{\emph{\sc{Maple}}}
-\newcommand{\simulink}{\emph{\sc{Simulink}}}
-\newcommand{\dc}{d.c.}
-\newcommand{\ac}{a.c.}
-\newcommand{\rms}{RMS}
-\newcommand{\wgn}{{\tt wgn}}
-\newcommand{\sus}[1]{$^{\mbox{\scriptsize #1}}$}
-\newcommand{\sub}[1]{$_{\mbox{\scriptsize #1}}$}
-\newcommand{\chap}[1]{Chapter~\ref{#1}}
-\newcommand{\sect}[1]{Section~\ref{#1}}
-\newcommand{\fig}[1]{Fig.~\ref{#1}}
-\newcommand{\tab}[1]{Table~\ref{#1}}
-\newcommand{\equ}[1]{(\ref{#1})}
-\newcommand{\appx}[1]{Appendix~\ref{#1}}
-\newcommand{\degree}{\ensuremath{^\circ}}
-\newcommand{\Vrms}{Vrms}
-\newcommand{\Vpp}{V\sub{pp}}
-\newcommand{\otoprule}{\midrule[\heavyrulewidth]}         
-\newcolumntype{Z}{>{\centering\arraybackslash}X}  % tabularx centered columns 
-\makeatletter \DeclareRobustCommand{\em}{\@nomath\em \if b\expandafter\@car\f@series\@nil \normalfont \else \bfseries \fi} \makeatother
-\newcounter{example_number} % keep track of the example questions
-
-\usepackage{hyperref}
-
-%%%%%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%%%%
-\title{Combinatorial Mesh Calculus (CMC): Lecture 4}
-\author{Lectured by: \href{https://scholar.google.com/citations?user=x4R-snQAAAAJ&hl=en}{Dr. Kiprian Berbatov}$^1$\\
-\smallskip
-Lecture Notes Compiled by: \href{https://scholar.google.com/citations?user=CoIpITkAAAAJ&hl=en}{Muhammad Azeem}$^1$\\
-\smallskip
-Under the supervision of: \href{https://scholar.google.co.uk/citations?user=3nWJe5wAAAAJ&hl=en}{Prof. Andrey P. Jivkov}$^1$\\
-\smallskip {\tiny $^1$Department of Mechanical and Aerospace Engineering, The University of Manchester, Oxford Road, Manchester M13 9PL, UK}
-}
-\date{\today}
-
+% Beamer presentation
+\input{preamble.tex}
+\cmclecture{4}
+\date{17 October 2025}
 
 \begin{document}
 
 %========================= TITLE =========================
 \begin{frame}
-  \titlepage
-  \begin{tikzpicture}[remember picture,overlay]
-  \node[anchor=south east] at (current page.south east) {
-    \href{https://youtube.com/@kipi.berbatov?si=gHtoBwWkTRCcCw2g}{
-      \includegraphics[width=1.5cm]{youtube-icon.png}
-    }
-  };
-\end{tikzpicture}
+  \cmctitleframe
 \end{frame}
 
 % ============================================================
@@ -540,7 +438,6 @@ Hence
 Modules over non-fields can have surprising behaviors — e.g., not every submodule has a complement, not every module has a basis.
 \end{frame}
 
-
 \begin{frame}{Summary of Lecture 4}
 \begin{itemize}
   \item Defined an $R$–module as an abelian group with a compatible scalar multiplication.
@@ -554,10 +451,7 @@ Modules over non-fields can have surprising behaviors — e.g., not every submod
 \end{frame}
 
 \begin{frame}{Thanks}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.85\linewidth]{Thanks.png}
-    \end{figure}
+  \cmcendframe
 \end{frame}
 
 \end{document}
