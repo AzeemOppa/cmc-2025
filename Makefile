@@ -32,7 +32,8 @@ build/website: | build
 PHONY: website
 website: build/website/index.html build/website/style.css \
   build/website/lecture-01.pdf build/website/lecture-02.pdf \
-  build/website/lecture-03.pdf build/website/lecture-04.pdf
+  build/website/lecture-03.pdf build/website/lecture-04.pdf \
+  build/website/lecture-05.pdf
 
 build/website/index.html: code/html/index.html | build/website
 	cp $< $|
