@@ -9,7 +9,8 @@ all: $(_lectures_pdf)
 build:
 	mkdir -p $@
 
-LATEX_COMPILER := TEXINPUTS=./code/latex: lualatex -halt-on-error
+LATEX_COMPILER := \
+  TEXINPUTS=./code/latex:./code/sty: lualatex -halt-on-error
 
 $(_lectures_pdf): build/lecture-%.pdf: code/latex/lecture-%.tex\
   code/latex/preamble.tex | build
