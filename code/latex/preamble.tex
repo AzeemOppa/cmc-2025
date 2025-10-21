@@ -25,34 +25,22 @@
 \graphicspath{{./images/png}} % generic graphics path; overridden if necessary
 \usepackage{amsmath}
 \allowdisplaybreaks[1] % allow eqnarrays to break across pages
-\usepackage{amssymb} 
-\usepackage[HTML]{xcolor}
-\definecolor{uomlinkblue}{HTML}{0071BC}
+\usepackage{amssymb}
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
   linkcolor=uomlinkblue,
-  filecolor=uomlinkblue,      
+  filecolor=uomlinkblue,
   urlcolor=uomlinkblue,
   pdflang={en-GB},
 }
 \usepackage[document]{ragged2e} % left aligned text for accessibility
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows, arrows.meta}
-\usepackage{unicode-math} % unicode maths for accessibility
-\usepackage{pdfcomment}   % for alt text for accessibility
-\usepackage{rotating}     % allow portrait figures and tables
-\usepackage{subfigure}    % allow matrices of figures
-\usepackage{float}        % allows H option on floats to force here placement
-\usepackage{multirow}     % allows merging of rows in tables
-\usepackage{tabularx}     % allows fixed width tables
-\usepackage{ctable}       % modifies \hline for use in table
-\usepackage{bm}           % allow bold fonts in equations
-\usepackage{pgf}          % allow graphics manipulation
-\usepackage{etoolbox}
-  
+\usepackage{tabularx} % allows fixed width tables
+
 % Custom commands
-\newcolumntype{Z}{>{\centering\arraybackslash}X}  % tabularx centered columns 
+\newcolumntype{Z}{>{\centering\arraybackslash}X}  % tabularx centered columns
 
 \makeatletter
   \DeclareRobustCommand{\em}

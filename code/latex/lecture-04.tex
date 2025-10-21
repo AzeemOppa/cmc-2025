@@ -15,8 +15,8 @@
 % ============================================================
 
 \begin{frame}{Module over a Commutative Ring with Unity (CRWU)}
-\begin{block}{Definition.}  
-Let $R$ be a commutative ring with unity (CRWU), and let $(V, +, -, 0)$ be an abelian (commutative) group under addition.  
+\begin{block}{Definition.}
+Let $R$ be a commutative ring with unity (CRWU), and let $(V, +, -, 0)$ be an abelian (commutative) group under addition.
 A \emph{scalar multiplication} $*: R\times V \to V$ makes $V$ an \textbf{$R$–module} if the following hold for all $\lambda,\mu\in R$ and $v,w\in V$:
 \[
 \begin{aligned}
@@ -27,9 +27,9 @@ A \emph{scalar multiplication} $*: R\times V \to V$ makes $V$ an \textbf{$R$–m
 \end{aligned}
 \]
 
-\textbf{Notation:} $(V,+,*,0)$ is called an \emph{$R$–module}.  
+\textbf{Notation:} $(V,+,*,0)$ is called an \emph{$R$–module}.
 If $R$ is a field, $V$ is a \textbf{vector space over $R$}.
-    
+
 \end{block}
 
 \end{frame}
@@ -49,18 +49,18 @@ Modules generalize vector spaces---where scalars come not from a field, but from
     \node (V) at (2.5,0) {$V$};
     \node (RV) at (1.25,-1.2) {$R\times V$};
     \node (V2) at (2.5,-2.5) {$V$};
-    
+
     % 2. Draw the arrows
-    
+
     % R -> RV (Diagonal Left)
-    \draw[->] (R) -- (RV); 
-    
+    \draw[->] (R) -- (RV);
+
     % V -> RV (Diagonal Right)
     \draw[->] (V) -- (RV);
 
     % RV -> V2 (Labeled with action symbol)
     \draw[->] (RV) -- (V2) node[midway, right] {$*$};
-    
+
     % Explanatory label at the bottom
     \node at (1.25,-3.2) {$(\lambda,v)\mapsto \lambda*v$};
 
@@ -76,7 +76,7 @@ Modules generalize vector spaces---where scalars come not from a field, but from
 \begin{frame}{Examples of $R$–Modules}
 Let $R$ be a CRWU, $m,n\in\mathbb{N}$.
 
-\textbf{1. Coordinate Module:}  
+\textbf{1. Coordinate Module:}
 \[
 R^n = \{(a_1,\dots,a_n)\mid a_i\in R\}.
 \]
@@ -87,23 +87,23 @@ Addition and scalar multiplication defined by
 \[
 \lambda*(a_1,\dots,a_n)=(\lambda a_1,\dots,\lambda a_n).
 \]
-Then $(R^n,+,*)$ is an $R$–module.  
+Then $(R^n,+,*)$ is an $R$–module.
 When $R$ is a field, this is a vector space.
 
-\textbf{2. Matrix Module:}  
+\textbf{2. Matrix Module:}
 \[
 M_{m\times n}(R)=\{[a_{ij}]_{m\times n}\mid a_{ij}\in R\},
 \]
-with addition $(A+B)_{ij}=a_{ij}+b_{ij}$,  
+with addition $(A+B)_{ij}=a_{ij}+b_{ij}$,
 and scalar multiplication $(\lambda A)_{ij}=\lambda a_{ij}$.
 \end{frame}
 
 \begin{frame}{Examples (continued)}
 \begin{block}{}
-\textbf{3. Zero Module:} $\{0\}$ with $r*0=0$ for all $r\in R$.  
+\textbf{3. Zero Module:} $\{0\}$ with $r*0=0$ for all $r\in R$.
 
-\textbf{4. Free Module:}  
-Let $S=\{e_1,\dots,e_n\}$ be a finite set.  
+\textbf{4. Free Module:}
+Let $S=\{e_1,\dots,e_n\}$ be a finite set.
 Define
 \[
 \mathrm{Free}_R(S) = \left\{ \sum_{i=1}^n \lambda_i e_i \mid \lambda_i\in R \right\}.
@@ -142,25 +142,25 @@ the ring of polynomials over $R$—a free $R$–module with basis $$\{1,x,x^2,\d
 \begin{frame}{Linear Independence and Span}
 \vspace{-0.3cm}
 \begin{block}{Definition: Let $V$ be an $R$–module, $e_1,\dots,e_n\in V$.}
-\textbf{1. Linear Independence:}  
+\textbf{1. Linear Independence:}
 $\{e_1,\dots,e_n\}$ is linearly independent if
 \[
 \lambda_1 e_1+\dots+\lambda_n e_n=0 \Rightarrow \lambda_1=\dots=\lambda_n=0.
 \]
 
-\textbf{2. Linear Dependence:}  
+\textbf{2. Linear Dependence:}
 The set is linearly dependent if there exist coefficients, not all zero, satisfying
 \[
 \lambda_1 e_1+\dots+\lambda_n e_n=0.
 \]
 
-\textbf{3. Span:}  
+\textbf{3. Span:}
 \vspace{-0.5cm}
 \[
 \mathrm{Span}_R\{e_1,\dots,e_n\}=\left\{\sum_{i=1}^n\lambda_i e_i\mid\lambda_i\in R\right\}.
 \]
 
-\textbf{4. Basis:}  
+\textbf{4. Basis:}
 \vspace{-0.1cm}
 A set $\{e_1,\dots,e_n\}$ is a basis of $V$ if it is linearly independent and spans $V$.
 \end{block}
@@ -170,16 +170,16 @@ A set $\{e_1,\dots,e_n\}$ is a basis of $V$ if it is linearly independent and sp
 \begin{block}{Example}
     Let $V=R^2$, $v_1=(2,0)$, $v_2=(3,0)$.
 \begin{enumerate}
-    \item$R=\mathbb{Q}$ (field). If $\lambda_1 v_1 + \lambda_2 v_2 = 0 \Rightarrow (2\lambda_1 + 3\lambda_2, 0)=0$. Thus $2\lambda_1+3\lambda_2=0 \Rightarrow \lambda_1=-\tfrac{3}{2}\lambda_2$.  
+    \item$R=\mathbb{Q}$ (field). If $\lambda_1 v_1 + \lambda_2 v_2 = 0 \Rightarrow (2\lambda_1 + 3\lambda_2, 0)=0$. Thus $2\lambda_1+3\lambda_2=0 \Rightarrow \lambda_1=-\tfrac{3}{2}\lambda_2$.
 For independence we need both $\lambda_1=\lambda_2=0$. Hence $v_1,v_2$ are \textit{not} independent since nontrivial rational coefficients satisfy the equation.\
-    \item $R=\mathbb{Z}$ (integral domain).  
-$2\lambda_1+3\lambda_2=0$ implies $\lambda_1=-\tfrac{3}{2}\lambda_2$.  
-But coefficients must be integers. The only integer solution is $\lambda_1=\lambda_2=0$.  
+    \item $R=\mathbb{Z}$ (integral domain).
+$2\lambda_1+3\lambda_2=0$ implies $\lambda_1=-\tfrac{3}{2}\lambda_2$.
+But coefficients must be integers. The only integer solution is $\lambda_1=\lambda_2=0$.
 Hence $v_1,v_2$ are independent over $\mathbb{Z}$.
 \end{enumerate}
 
 
-\textbf{Conclusion:}  
+\textbf{Conclusion:}
 Independence depends on the underlying ring.
 \end{block}
 
@@ -191,7 +191,7 @@ If $R$ is a field and $\mu_1v_1+\dots+\mu_nv_n=0$ with $\mu_i\ne0$, then we can 
 \[
 v_i = \sum_{j\ne i} \frac{-\mu_j}{\mu_i} v_j.
 \]
-However, for general modules (where $R$ is not a field), division may not be possible, so such reduction cannot be performed.    
+However, for general modules (where $R$ is not a field), division may not be possible, so such reduction cannot be performed.
 \end{block}
 
 \end{frame}
@@ -243,13 +243,13 @@ A = aE_{11}+bE_{12}+cE_{21}+dE_{22}.
 \end{frame}
 
 \begin{frame}{Other Basis Examples}
-\begin{block}{Zero Module:} $\phi$ is a basis of $\{0\}$.  
+\begin{block}{Zero Module:} $\phi$ is a basis of $\{0\}$.
 \end{block}
-\begin{block}{Free Module:} If $S$ is a set, $S$ itself forms a basis of $\mathrm{Free}_R(S)$.  
+\begin{block}{Free Module:} If $S$ is a set, $S$ itself forms a basis of $\mathrm{Free}_R(S)$.
 
 \end{block}
-\begin{block}{Polynomial Module:}  
-For $S=\{1,x,x^2,\dots\}$,  
+\begin{block}{Polynomial Module:}
+For $S=\{1,x,x^2,\dots\}$,
 \[
 R[x]=\mathrm{Free}_R(S)
 \]
@@ -261,21 +261,21 @@ with basis $\{1,x,x^2,\dots\}$.
 
 
 \begin{frame}{Uniqueness of Representation}
-\begin{block}{Proposition.}  
-Let $R$ be a CRWU, $V$ an $R$–module, and $S=\{e_1,\dots,e_n\}\subseteq V$.  
+\begin{block}{Proposition.}
+Let $R$ be a CRWU, $V$ an $R$–module, and $S=\{e_1,\dots,e_n\}\subseteq V$.
 Then $S$ is a basis of $V$ if and only if every $v\in V$ can be expressed uniquely as
 \[
 v=\lambda_1 e_1+\dots+\lambda_n e_n,\quad \lambda_i\in R.
-\]  
+\]
 \end{block}
 
 \textbf{Proof.}
-($\Rightarrow$)\\  
-If $S$ is a basis, then by definition it spans $V$, so such $\lambda_i$ exist.  
-Suppose $v=\sum \lambda_i e_i = \sum \mu_i e_i$. Then $\sum (\lambda_i-\mu_i)e_i=0$.  
+($\Rightarrow$)\\
+If $S$ is a basis, then by definition it spans $V$, so such $\lambda_i$ exist.
+Suppose $v=\sum \lambda_i e_i = \sum \mu_i e_i$. Then $\sum (\lambda_i-\mu_i)e_i=0$.
 Linear independence implies $\lambda_i-\mu_i=0$ for all $i$. Hence uniqueness.
 
-($\Leftarrow$) \\ 
+($\Leftarrow$) \\
 If every $v$ has a unique representation, then:\\
 - Existence implies $S$ spans $V$.\\
 - Uniqueness implies $S$ is linearly independent.  \\
@@ -284,8 +284,8 @@ Thus $S$ is a basis. $\square$
 
 
 \begin{frame}{Submodule}
-\begin{block}{Definition.}  
-Let $R$ be a CRWU, $V$ an $R$–module.  
+\begin{block}{Definition.}
+Let $R$ be a CRWU, $V$ an $R$–module.
 A subset $W\subseteq V$ is called a \textbf{submodule} of $V$ if:
 \begin{enumerate}
   \item $(W,+)$ is a subgroup of $(V,+)$,
@@ -342,7 +342,7 @@ x_1+2x_2+3x_3=0,\\
 -2x_1-4x_2-8x_3=0.
 \end{cases}
 \]
-Second equation is $-2\times$ first, redundant.  
+Second equation is $-2\times$ first, redundant.
 Solve first:
 \[
 x_1=-2x_2-3x_3.
@@ -372,7 +372,7 @@ Notice that
 \begin{bmatrix}3\\-8\end{bmatrix}=3\begin{bmatrix}1\\-2\end{bmatrix}
 +\begin{bmatrix}0\\-2\end{bmatrix},
 \]
-so only one of these is independent.  
+so only one of these is independent.
 Therefore,
 \[
 \mathrm{Im}(A)=\mathrm{Span}_{\mathbb{Q}}
@@ -415,7 +415,7 @@ Hence
 
 \vspace{0.3cm}
 
-\textbf{Interpretation:}  
+\textbf{Interpretation:}
 \begin{itemize}
 \item Null$(A)$ lives in the domain $R^n$ (vectors mapped to zero)
 \item Im$(A)$ lives in the codomain $R^m$ (all possible outputs)
@@ -434,7 +434,7 @@ Hence
   \item If $R$ is a principal ideal domain, many results from linear algebra (rank, basis, independence) extend naturally.
 \end{itemize}
 
-\textbf{Important note:}  
+\textbf{Important note:}
 Modules over non-fields can have surprising behaviors — e.g., not every submodule has a complement, not every module has a basis.
 \end{frame}
 

@@ -11,12 +11,12 @@
 \end{frame}
 
 \begin{frame}{Definition of an n–ary Operation}
-\begin{block}{Definition.}  
-Let \( X \) be a nonempty set and \( n \in \mathbb{N} \).  
+\begin{block}{Definition.}
+Let \( X \) be a nonempty set and \( n \in \mathbb{N} \).
 An \emph{n–ary operation} on \( X \) is a function
 \[
 f : X^n \longrightarrow X.
-\]  
+\]
 \end{block}
 
 \begin{block}{Special cases:}
@@ -26,11 +26,11 @@ f : X^n \longrightarrow X.
   \item \( n = 2 \): a \emph{binary operation} \( f: X \times X \to X \).
 \end{itemize}
 
-\textbf{Notation:} For a binary operation, we often write  
+\textbf{Notation:} For a binary operation, we often write
 \[
 f(x,y) = x * y.
 \]
-    
+
 \end{block}
 \end{frame}
 
@@ -135,8 +135,8 @@ a * b = b * a, \quad \forall a,b \in X.
 \begin{itemize}
   \item On \((M_{2\times2}(\mathbb{R}), \times)\): matrix multiplication is \textbf{associative} but \textbf{not commutative}; for example,
   \[
-  A=\begin{bmatrix}1&0\\0&0\end{bmatrix},\ 
-  B=\begin{bmatrix}0&1\\0&0\end{bmatrix} 
+  A=\begin{bmatrix}1&0\\0&0\end{bmatrix},\
+  B=\begin{bmatrix}0&1\\0&0\end{bmatrix}
   \implies AB\neq BA.
   \]
   \item On \((\mathbb{R}, \div)\): division is \textbf{neither associative nor commutative}, e.g.
@@ -151,8 +151,8 @@ a * b = b * a, \quad \forall a,b \in X.
 
 % ============================================================
 \begin{frame}{Identity (Neutral) Elements}
-\begin{block}{Definition.}  
-Let \((X,*)\) be a set with a binary operation.  
+\begin{block}{Definition.}
+Let \((X,*)\) be a set with a binary operation.
 An element \(e \in X\) is called a
 \begin{itemize}
   \item \textbf{left identity} if \( e * x = x \) for all \(x\in X\),
@@ -178,12 +178,12 @@ We want to check whether there exists an element \(e \in \mathbb{R}\) such that
 \[
 a - e = a = e - a, \quad \forall\, a \in \mathbb{R}.
 \]
-The first equation \(a - e = a\) implies \(e = 0\).  
-Substituting \(e = 0\) into the second equation gives \(e - a = 0 - a = -a\).  
+The first equation \(a - e = a\) implies \(e = 0\).
+Substituting \(e = 0\) into the second equation gives \(e - a = 0 - a = -a\).
 For this to equal \(a\) for all \(a\), we would need \(-a = a\), which is true only when \(a = 0\).
 
-Hence no single element \(e\) satisfies both conditions for all \(a \in \mathbb{R}\).  
-Therefore, subtraction has \emph{no identity element} — it fails to form a monoid under subtraction.    
+Hence no single element \(e\) satisfies both conditions for all \(a \in \mathbb{R}\).
+Therefore, subtraction has \emph{no identity element} — it fails to form a monoid under subtraction.
 \end{itemize}
 \end{block}
 
@@ -192,8 +192,8 @@ Therefore, subtraction has \emph{no identity element} — it fails to form a mon
 
 % ============================================================
 \begin{frame}{Inverse Elements}
-\begin{block}{Definition.}  
-Let \((X,*,e)\) have identity element \(e\).  
+\begin{block}{Definition.}
+Let \((X,*,e)\) have identity element \(e\).
 An element \(x'\in X\) is called
 \begin{itemize}
   \item a \textbf{left inverse} of \(x\) if \(x' * x = e\),
@@ -299,7 +299,7 @@ Hence $(\mathbb{R}, \times)$ is a commutative monoid, not a group.
 % ============================================================
 
 \begin{frame}{Proposition: Uniqueness of the Unit}
-\begin{block}{Proposition.}  
+\begin{block}{Proposition.}
 If a binary operation \( * \) on \( X \) admits a left identity \(e_L\) and a right identity \(e_R\),
 then they coincide: \(e_L = e_R\).
 
@@ -324,7 +324,7 @@ A binary structure can have at most one identity element.
 
 \begin{frame}{Definition of a Monoid}
 \vspace{-0.3cm}
-\begin{block}{}  
+\begin{block}{}
 A \emph{monoid} is a triple \((M, *, e)\) such that:
 \begin{enumerate}
   \item \( * : M \times M \to M\) is a binary operation,
@@ -351,7 +351,7 @@ A \emph{monoid} is a triple \((M, *, e)\) such that:
 
 \begin{frame}{Remark}
 \vspace{-0.2cm}
-\begin{block}{Remark on Commutative (Abelian) Monoids.}  
+\begin{block}{Remark on Commutative (Abelian) Monoids.}
 A monoid \((M, *, e)\) consists of a set \(M\), a binary operation \(* : M \times M \to M\), and an identity element \(e\) satisfying:
 \[
 (a * b) * c = a * (b * c), \qquad e * a = a * e = a, \quad \forall a,b,c \in M.
@@ -363,8 +363,8 @@ a * b = b * a, \quad \forall a,b \in M,
 \]
 then the monoid is called a \textbf{commutative monoid}, or equivalently, an \textbf{abelian monoid}.
 
-\textbf{Intuition:}  
-Commutativity means that the order in which elements are combined does not affect the result.  
+\textbf{Intuition:}
+Commutativity means that the order in which elements are combined does not affect the result.
 In a commutative monoid, both the associative property and the commutative property coexist with an identity element.
 \end{block}
 \end{frame}
@@ -378,11 +378,11 @@ In a commutative monoid, both the associative property and the commutative prope
 \end{itemize}
 
 \textbf{Non-Example:}
-\((M_{2\times2}(\mathbb{R}), \times, I_2)\) is a monoid because matrix multiplication is associative and \(I_2\) acts as the identity,  
+\((M_{2\times2}(\mathbb{R}), \times, I_2)\) is a monoid because matrix multiplication is associative and \(I_2\) acts as the identity,
 but it is \emph{not commutative} in general, since for many matrices \(A,B\), \(AB \neq BA.\)
 
-\textbf{Historical Note:}  
-The term \emph{abelian} originates from Niels Henrik Abel, a 19th-century mathematician who first studied commutative algebraic structures.     
+\textbf{Historical Note:}
+The term \emph{abelian} originates from Niels Henrik Abel, a 19th-century mathematician who first studied commutative algebraic structures.
     \end{block}
 \end{frame}
 
@@ -413,13 +413,13 @@ The term \emph{abelian} originates from Niels Henrik Abel, a 19th-century mathem
 
 
 \begin{frame}{Equality of Left and Right Inverses}
-\textbf{Proposition.}  
-Let $(X, *, e)$ be a monoid, and let $a, b, c \in X$.  
+\textbf{Proposition.}
+Let $(X, *, e)$ be a monoid, and let $a, b, c \in X$.
 If $b$ is a left inverse of $a$ and $c$ is a right inverse of $a$, i.e.
 \[
 b * a = e \quad \text{and} \quad a * c = e,
 \]
-then \(b = c\).  
+then \(b = c\).
 Consequently, \(a\) is invertible and \(b=c=a^{-1}\).
 
 \textbf{Proof.}
@@ -435,8 +435,8 @@ In a monoid, if both left and right inverses exist for an element, they coincide
 
 % ============================================================
 \begin{frame}{Product of Invertible Elements}
-\textbf{Proposition.}  
-Let $(X, *, e)$ be a monoid.  
+\textbf{Proposition.}
+Let $(X, *, e)$ be a monoid.
 If $a,b \in X$ are invertible, then so is $a*b$.
 
 \textbf{Proof.}
@@ -462,7 +462,7 @@ Thus $(b^{-1}*a^{-1})$ is the inverse of $(a*b)$.
 % ============================================================
 
 \begin{frame}{Definition of a Group}
-\textbf{Definition.}  
+\textbf{Definition.}
 A \emph{group} is a quadruple $(G, *, e, i)$ where
 \begin{enumerate}
   \item $(G,*,e)$ is a monoid,
@@ -488,13 +488,13 @@ A \emph{group} is a quadruple $(G, *, e, i)$ where
 \begin{frame}{Examples of Groups}
 \textbf{Examples:}
 \begin{enumerate}
-  \item $(\mathbb{Z}, +, 0, -)$  
-        Abelian group under addition.  
+  \item $(\mathbb{Z}, +, 0, -)$
+        Abelian group under addition.
         \(\forall x\in\mathbb{Z},\, x+(-x)=0.\)
-  \item $(M_{n\times n}(\mathbb{Z}), +, O_n, -)$  
+  \item $(M_{n\times n}(\mathbb{Z}), +, O_n, -)$
         Additive abelian group of integer matrices.
-  \item $(M_{n\times n}(\mathbb{R}), +, O_n, -)$ and  
-        $(M_{n\times n}(\mathbb{Q}), +, O_n, -)$  
+  \item $(M_{n\times n}(\mathbb{R}), +, O_n, -)$ and
+        $(M_{n\times n}(\mathbb{Q}), +, O_n, -)$
         Additive abelian groups of real or rational matrices.
 \end{enumerate}
 
@@ -515,8 +515,8 @@ All are \emph{abelian} since addition is commutative.
 % ============================================================
 
 \begin{frame}{Definition: Group of Units}
-\begin{block}{Definition.}  
-Let $(X, *, e)$ be a monoid.  
+\begin{block}{Definition.}
+Let $(X, *, e)$ be a monoid.
 The set of all invertible elements of $X$ is denoted by
 \[
 X^* = \{\, x \in X \mid \exists\, x^{-1}\in X,\; x*x^{-1}=x^{-1}*x=e \,\}.
@@ -583,7 +583,7 @@ If \(U\subseteq V\subseteq X\), then
     \node (X) [below=of U] {$X$};
     % Y is to the right of U
     \node (Y) [right=of U] {$Y$};
-    
+
     % 2. Draw the arrows
 
     % U -> Y (Horizontal map f|_U)
@@ -606,7 +606,7 @@ If \(U\subseteq V\subseteq X\), then
 \end{frame}
 
 \begin{frame}{Remark: Shrink of a Function}
-\textbf{Remark (Shrink).}  
+\textbf{Remark (Shrink).}
 Sometimes one considers a \emph{shrinking} of a function’s domain to a subset where a certain property holds (e.g., continuity, invertibility).
 
 Formally, if \(P(x)\) is a property on \(X\), define
@@ -618,7 +618,7 @@ Thus, a \emph{shrink} is a restricted version of \(f\) preserving only the porti
 
 
 \begin{frame}{General and Special Linear Groups}
-\begin{block}{Definition (General Linear Group).}  
+\begin{block}{Definition (General Linear Group).}
 For a field \(F\) and integer \(n \ge 1\),
 \[
 GL_n(F) = \{ A \in M_{n\times n}(F) \mid \det(A) \ne 0 \}.
@@ -682,7 +682,7 @@ It is a normal subgroup of \(GL_n(F)\).
 % ============================================================
 
 \begin{frame}{Proposition on Composition of Functions}
-Let \(A,B,C,D\) be sets and let  
+Let \(A,B,C,D\) be sets and let
 \(f:A\to B,\; g:B\to C,\; h:C\to D.\)
 
 \begin{block}{Proposition.}
@@ -706,8 +706,8 @@ Function composition forms a monoid operation on the set of all maps from a set 
 
 \begin{frame}{Corollary: The Function Monoid}
 \begin{block}{Corollary.}
-Let \(A\) be a set.  
-Then \((\text{End}(A), \circ, \mathrm{id}_A)\) is a monoid,  
+Let \(A\) be a set.
+Then \((\text{End}(A), \circ, \mathrm{id}_A)\) is a monoid,
 where \(\text{End}(A) = \{ f : A \to A \}\).
 \end{block}
 
@@ -725,7 +725,7 @@ Hence it satisfies monoid axioms. \(\square\)
 
 \begin{frame}{Definition: Group of Bijections}
 \begin{block}{Automorphisms}
-    The set of all bijections \(f:A\to A\) under composition forms a group,  
+    The set of all bijections \(f:A\to A\) under composition forms a group,
 denoted by \(\mathrm{Aut}(A)\) or \(S_A\), called the \emph{group of automorphisms (permutations)} of \(A\).
 
 \textbf{Properties:}
@@ -745,7 +745,7 @@ For a finite set \(A=\{1,2,\dots,n\}\),
 \[
 S_n = \{ \text{all bijections } A \to A \}
 \]
-is called the \emph{symmetric group on $n$ letters}.  
+is called the \emph{symmetric group on $n$ letters}.
 \(|S_n| = n!\).
 \end{block}
 
@@ -775,7 +775,7 @@ Elements of \(S_3\):
 \[
 (12)\circ(23) = (123), \quad (23)\circ(12) = (132),
 \]
-and \((123) \ne (132)\).  
+and \((123) \ne (132)\).
 Hence \(S_3\) is \textbf{not commutative} (non-abelian).
 
 \begin{center}

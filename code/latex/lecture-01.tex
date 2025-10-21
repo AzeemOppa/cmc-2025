@@ -15,7 +15,7 @@
 
 \begin{frame}{Basic Definitions}
 \begin{itemize}
-  \item \textbf{Natural numbers:} 
+  \item \textbf{Natural numbers:}
      $\mathbb{N} = \{0,1,2,3,\dots\} \quad\text{or}\quad \{1,2,3,\dots\},$ choice depends on convention.
   \item \textbf{Positive naturals:}  $\mathbb{N}^{+} = \{1,2,3,\dots\}$
   \item \textbf{Integers:} $\mathbb{Z} = \{\dots,-2,-1,0,1,2,\dots\}$
@@ -59,7 +59,7 @@ means “the subset of \(A\) whose members satisfy property \(\varphi\).”
   M_{m \times n}(X) = \left\{\, [a_{ij}] \mid a_{ij} \in X,\; 1 \le i \le m,\,1 \le j \le n\right\}.
 \end{align*}
 \end{itemize}
-   
+
 \end{block}
 \end{frame}
 
@@ -77,7 +77,7 @@ Let \(\varphi\) and \(\psi\) be logical statements (predicates). We have:
 \varphi \implies \psi &\text{ (implication)}, \\
 \varphi \iff \psi &\text{ (bi-conditional, equivalence)}.
 \end{aligned}
-\end{align*}    
+\end{align*}
 \end{block}
 
 Some equivalences:
@@ -131,8 +131,8 @@ Then\vspace{-0.5cm}
 \begin{align*}
 A \cup B = \{ x \mid x\in A \;\text{or}\; x\in B\}, \\
 A \cap B = \{ x \mid x\in A \;\text{and}\; x\in B\}, \\
-A \setminus B = \{ x \mid x\in A \;\text{and}\; x\notin B\}.    
-\end{align*}    
+A \setminus B = \{ x \mid x\in A \;\text{and}\; x\notin B\}.
+\end{align*}
 \end{block}
 
 \begin{block}{Power set:}
@@ -235,12 +235,12 @@ h \circ (g \circ f) = (h \circ g) \circ f.
 \end{align*}
 \vspace{-0.5cm}
 \begin{block}{Example:}
-Let  $X = \{a,b,c\},\; Y = \{0,1\},\; Z = \{w,x,y,z\}.$ Define 
+Let  $X = \{a,b,c\},\; Y = \{0,1\},\; Z = \{w,x,y,z\}.$ Define
 \begin{align*}
 f(a)=0,\; f(b)=1,\; f(c)=0, \quad
 g(0)=w,\; g(1)=z.
 \end{align*}
-Then \(g \circ f\) maps \(a\mapsto w\), \(b\mapsto z\), \(c\mapsto w\).  
+Then \(g \circ f\) maps \(a\mapsto w\), \(b\mapsto z\), \(c\mapsto w\).
 You can draw arrow diagrams:
 $X \xrightarrow{f} Y \xrightarrow{g} Z$
 \end{block}
@@ -255,7 +255,7 @@ $X \xrightarrow{f} Y \xrightarrow{g} Z$
 \end{frame}
 
 \begin{frame}{Axiom of Set Equality:}
-\textbf{Axiom (Extensionality).}  
+\textbf{Axiom (Extensionality).}
 Let $X$ and $Y$ be two sets. Then
 \[
 X = Y \iff \bigl( X \subseteq Y \ \text{and}\  Y \subseteq X \bigr),
@@ -263,7 +263,7 @@ X = Y \iff \bigl( X \subseteq Y \ \text{and}\  Y \subseteq X \bigr),
 that is,
 \[
 X = Y \iff \bigl( \forall x\, (x \in X \Rightarrow x \in Y) \bigr)
-\ \text{and}\ 
+\ \text{and}\
 \bigl( \forall x\, (x \in Y \Rightarrow x \in X) \bigr).
 \]
 \textbf{Interpretation:} Two sets are equal if and only if they contain exactly the same elements.
@@ -276,7 +276,7 @@ X = Y \iff \bigl( \forall x\, (x \in X \Rightarrow x \in Y) \bigr)
 \end{itemize}
 By the Axiom of Extensionality, $A=B$.
 
-\textbf{Corollary (Intersection Form):}  
+\textbf{Corollary (Intersection Form):}
 If $A \cap C = B \cap C$ for every $C$, then $A=B$ since identical intersections imply identical elements. $\square$
 \end{exampleblock}
 \end{frame}
@@ -285,7 +285,7 @@ If $A \cap C = B \cap C$ for every $C$, then $A=B$ since identical intersections
 \vspace{-0.4cm}
 \begin{block}{Definition:} For any set \(X\), the identity function is
 \begin{align*}
-\mathrm{id}_X: X \to X, \quad \mathrm{id}_X(x) = x \quad \forall x \in X.    
+\mathrm{id}_X: X \to X, \quad \mathrm{id}_X(x) = x \quad \forall x \in X.
 \end{align*}
 \end{block}
 
@@ -295,12 +295,12 @@ For any function \( f: X \to Y \),\\ $f \circ \mathrm{id}_X = f, \qquad \mathrm{
 \end{block}
 \vspace{-0.4cm}
 \begin{proof}
-Let \(x \in X\).  
+Let \(x \in X\).
 By definition of composition: $
-(f \circ \mathrm{id}_X)(x) = f(\mathrm{id}_X(x)) = f(x),$  since \(\mathrm{id}_X(x) = x\).  
+(f \circ \mathrm{id}_X)(x) = f(\mathrm{id}_X(x)) = f(x),$  since \(\mathrm{id}_X(x) = x\).
 Hence \(f \circ \mathrm{id}_X = f.\)
 
-Similarly, for the right composition: $(\mathrm{id}_Y \circ f)(x) = \mathrm{id}_Y(f(x)) = f(x),$ since \(\mathrm{id}_Y(y) = y\) for all \(y \in Y\).  
+Similarly, for the right composition: $(\mathrm{id}_Y \circ f)(x) = \mathrm{id}_Y(f(x)) = f(x),$ since \(\mathrm{id}_Y(y) = y\) for all \(y \in Y\).
 Thus \(\mathrm{id}_Y \circ f = f.\) \(\square\)
 \end{proof}
 \end{frame}
@@ -320,7 +320,7 @@ Let \(f: X \to Y\).
   \item \(f\) is \textbf{bijective} if it is both injective and surjective.
 \end{itemize}
 
-\textbf{Examples:}  
+\textbf{Examples:}
 \begin{itemize}
     \item \(\mathrm{id}_X\) is bijective.
     \item \(f(x) = x^2\) on \(\mathbb{R} \to \mathbb{R}\) is not injective (two preimages);
@@ -357,17 +357,17 @@ Let \(f: X \to Y\).
 \begin{frame}{Proof }
 \textbf{(1) Left inverse $\Leftrightarrow$ Injective.}
 
-\emph{($\Rightarrow$)}  
-Assume there exists \(g:Y\to X\) such that \(g\circ f = \mathrm{id}_X.\)  
+\emph{($\Rightarrow$)}
+Assume there exists \(g:Y\to X\) such that \(g\circ f = \mathrm{id}_X.\)
 Let \(f(x_1)=f(x_2)\). Applying \(g\) to both sides gives
 \[
 g(f(x_1)) = g(f(x_2)) \implies \mathrm{id}_X(x_1) = \mathrm{id}_X(x_2) \implies x_1 = x_2.
 \]
 Thus \(f\) is injective.
 
-\emph{($\Leftarrow$)}  
-Assume \(f\) is injective.  
-For each \(y\in\mathrm{im}(f)\), there exists a unique \(x\in X\) such that \(f(x)=y\).  
+\emph{($\Leftarrow$)}
+Assume \(f\) is injective.
+For each \(y\in\mathrm{im}(f)\), there exists a unique \(x\in X\) such that \(f(x)=y\).
 Define \(g:Y\to X\) by
 \[
 g(y) =
@@ -376,8 +376,8 @@ x, & \text{if } y=f(x)\text{ for some }x\in X,\\[4pt]
 x_0, & \text{if } y\notin\mathrm{im}(f),
 \end{cases}
 \]
-where \(x_0\in X\) is fixed arbitrarily.  
-Then for all \(x\in X\), \(g(f(x))=x\), hence \(g\circ f=\mathrm{id}_X.\)  
+where \(x_0\in X\) is fixed arbitrarily.
+Then for all \(x\in X\), \(g(f(x))=x\), hence \(g\circ f=\mathrm{id}_X.\)
 Therefore, \(f\) has a left inverse.
 
 \end{frame}
@@ -387,18 +387,18 @@ Therefore, \(f\) has a left inverse.
 
 \textbf{(2) Right inverse $\Leftrightarrow$ Surjective.}
 
-\emph{($\Rightarrow$)}  
-Assume there exists \(h:Y\to X\) such that \(f\circ h=\mathrm{id}_Y.\)  
+\emph{($\Rightarrow$)}
+Assume there exists \(h:Y\to X\) such that \(f\circ h=\mathrm{id}_Y.\)
 For every \(y\in Y\),
 \[
 f(h(y)) = y,
 \]
 so \(y\) is an image of \(f\). Hence \(f\) is surjective.
 
-\emph{($\Leftarrow$)}  
-Assume \(f\) is surjective.  
-Then for each \(y\in Y\) there exists at least one \(x\in X\) such that \(f(x)=y\).  
-Choose one such \(x\) (using the Axiom of Choice if necessary), and define \(h(y)=x.\)  
+\emph{($\Leftarrow$)}
+Assume \(f\) is surjective.
+Then for each \(y\in Y\) there exists at least one \(x\in X\) such that \(f(x)=y\).
+Choose one such \(x\) (using the Axiom of Choice if necessary), and define \(h(y)=x.\)
 Then \(f(h(y))=y\) for all \(y\in Y\), i.e. \(f\circ h=\mathrm{id}_Y.\)
 Thus \(h\) is a right inverse of \(f.\)
 \end{frame}
@@ -406,17 +406,17 @@ Thus \(h\) is a right inverse of \(f.\)
 \begin{frame}{Proof }
 \textbf{(3) Bijective $\Leftrightarrow$ Two–sided inverse.}
 
-\emph{($\Rightarrow$)}  
-If \(f\) is bijective, it is both injective and surjective.  
-From (1) and (2) there exist \(g,h:Y\to X\) such that \(g\circ f=\mathrm{id}_X\) and \(f\circ h=\mathrm{id}_Y.\)  
-But for a bijection, these must coincide (\(g=h=f^{-1}\)).  
+\emph{($\Rightarrow$)}
+If \(f\) is bijective, it is both injective and surjective.
+From (1) and (2) there exist \(g,h:Y\to X\) such that \(g\circ f=\mathrm{id}_X\) and \(f\circ h=\mathrm{id}_Y.\)
+But for a bijection, these must coincide (\(g=h=f^{-1}\)).
 Hence \(f^{-1}\) satisfies both identities:
 \[
 f^{-1}\circ f = \mathrm{id}_X,\qquad f\circ f^{-1} = \mathrm{id}_Y.
 \]
 
-\emph{($\Leftarrow$)}  
-If a function \(f\) has a two–sided inverse \(f^{-1}\), then \(f^{-1}\circ f=\mathrm{id}_X\) (injectivity) and \(f\circ f^{-1}=\mathrm{id}_Y\) (surjectivity).\\ 
+\emph{($\Leftarrow$)}
+If a function \(f\) has a two–sided inverse \(f^{-1}\), then \(f^{-1}\circ f=\mathrm{id}_X\) (injectivity) and \(f\circ f^{-1}=\mathrm{id}_Y\) (surjectivity).\\
 
 Therefore, \(f\) is bijective. \(\square\)
 \end{frame}
@@ -424,7 +424,7 @@ Therefore, \(f\) is bijective. \(\square\)
 
 \begin{frame}{Uniqueness of Inverse and Composition}
 \begin{block}{Uniqueness of Inverse}
-    If \(f\) has both left inverse \(g\) and right inverse \(h\), then one shows \(g = h\).  
+    If \(f\) has both left inverse \(g\) and right inverse \(h\), then one shows \(g = h\).
 Thus the two-sided inverse is unique.
 \end{block}
 
@@ -434,31 +434,31 @@ Thus the two-sided inverse is unique.
 (g \circ f)^{-1} = f^{-1} \circ g^{-1}.
 \end{align*}
 
-\emph{Proof:} ??? 
-    
+\emph{Proof:} ???
+
 \end{block}
 \end{frame}
 
 \begin{frame}{Proof}
     Since \(f\) and \(g\) are bijections, each has an inverse function \(f^{-1}: Y \to X\) and \(g^{-1}: Z \to Y\) satisfying:
 \[
-f^{-1} \circ f = \mathrm{id}_X, \quad f \circ f^{-1} = \mathrm{id}_Y, \quad 
+f^{-1} \circ f = \mathrm{id}_X, \quad f \circ f^{-1} = \mathrm{id}_Y, \quad
 g^{-1} \circ g = \mathrm{id}_Y, \quad g \circ g^{-1} = \mathrm{id}_Z.
 \]
 
 \textbf{Step 1: Show that \(g \circ f\) is bijective.}
 
-\emph{Injectivity:}  
-Suppose \((g\circ f)(x_1) = (g\circ f)(x_2)\).  
-Then \(g(f(x_1)) = g(f(x_2))\).  
-Since \(g\) is injective, it follows that \(f(x_1)=f(x_2)\).  
-Applying injectivity of \(f\), we get \(x_1 = x_2\).  
+\emph{Injectivity:}
+Suppose \((g\circ f)(x_1) = (g\circ f)(x_2)\).
+Then \(g(f(x_1)) = g(f(x_2))\).
+Since \(g\) is injective, it follows that \(f(x_1)=f(x_2)\).
+Applying injectivity of \(f\), we get \(x_1 = x_2\).
 Hence \(g\circ f\) is injective.
 
-\emph{Surjectivity:}  
-Let \(z \in Z\).  
-Since \(g\) is surjective, there exists \(y \in Y\) such that \(g(y)=z\).  
-Since \(f\) is surjective, there exists \(x \in X\) such that \(f(x)=y\).  
+\emph{Surjectivity:}
+Let \(z \in Z\).
+Since \(g\) is surjective, there exists \(y \in Y\) such that \(g(y)=z\).
+Since \(f\) is surjective, there exists \(x \in X\) such that \(f(x)=y\).
 Then
 \[
 (g\circ f)(x) = g(f(x)) = g(y) = z.
@@ -499,12 +499,12 @@ Both compositions give the identity maps on \(X\) and \(Z\), respectively. Thus 
 
 \begin{frame}{Bundles, Projection, and Sections}
 
-\begin{block}{Definition:} Let \(E\) and \(M\) be sets, and let \(\pi: E \to M\) be a surjection.  
+\begin{block}{Definition:} Let \(E\) and \(M\) be sets, and let \(\pi: E \to M\) be a surjection.
 We call \((E, \pi, M)\) a \emph{bundle over} \(M\), and \(\pi\) the \emph{projection map}.
 \end{block}
 
-\begin{block}{Definition:} 
-A \emph{section} is a (right) inverse map \(s: M \to E\) such that  
+\begin{block}{Definition:}
+A \emph{section} is a (right) inverse map \(s: M \to E\) such that
 \begin{align*}
 \pi \circ s = \mathrm{id}_M.
 \end{align*}
@@ -535,7 +535,7 @@ E = \bigsqcup_{x \in M} E_x.
     \centering
     \includegraphics[width=0.85\linewidth]{Image5.png}
 \end{figure}
-    
+
 \end{frame}
 
 
@@ -556,7 +556,7 @@ E_r = \{ (x,y) \mid x^2 + y^2 = r^2 \},
 \end{align*}
 i.e.\ the circle of radius \(r\). The total space is an annulus. This is an example of an \(I\)-bundle (interval-bundle) over a circle base.
 
-A section would pick one point on each circle: e.g.\ define 
+A section would pick one point on each circle: e.g.\ define
 \begin{align*}
 s(r) = (r, 0),
 \end{align*}
@@ -577,22 +577,22 @@ then \(\pi(s(r)) = r\).
 
 \begin{frame}{Proposition}
 \vspace{-0.3cm}
-\begin{block}{}  
+\begin{block}{}
 A function \( f : X \to Y \) is \textbf{bijective} if and only if it has a \textbf{two–sided inverse}; that is,
 \[
-f \text{ is bijective } \iff \exists\, g : Y \to X \text{ such that } 
+f \text{ is bijective } \iff \exists\, g : Y \to X \text{ such that }
 g \circ f = \mathrm{id}_X \text{ and } f \circ g = \mathrm{id}_Y.
 \]
 \end{block}
 
 \textbf{Proof}
-\textbf{($\Rightarrow$)}  
-Assume \(f\) is bijective.  
+\textbf{($\Rightarrow$)}
+Assume \(f\) is bijective.
 Then \(f\) is injective and surjective.
 
-\emph{Existence of inverse function:}  
-For each \(y \in Y\), surjectivity ensures the existence of at least one \(x \in X\) such that \(f(x)=y\).  
-Injectivity guarantees that this \(x\) is unique.  
+\emph{Existence of inverse function:}
+For each \(y \in Y\), surjectivity ensures the existence of at least one \(x \in X\) such that \(f(x)=y\).
+Injectivity guarantees that this \(x\) is unique.
 Hence, we can define a well–defined function \(g : Y \to X\) by assigning \(g(y)=x\), where \(f(x)=y.\)
 
 Now, for all \(x \in X\):
@@ -609,12 +609,12 @@ and for all \(y \in Y\):
 Thus \(g\circ f = \mathrm{id}_X\) and \(f\circ g = \mathrm{id}_Y\); \(g\) is a two–sided inverse of \(f.\)
 
 \medskip
-\textbf{($\Leftarrow$)}  
+\textbf{($\Leftarrow$)}
 Conversely, suppose there exists \(g : Y \to X\) such that
 \[
 g \circ f = \mathrm{id}_X, \quad f \circ g = \mathrm{id}_Y.
 \]
-\emph{Injectivity:}  
+\emph{Injectivity:}
 If \(f(x_1)=f(x_2)\), apply \(g\) to both sides:
 \[
 g(f(x_1)) = g(f(x_2)) \Rightarrow \mathrm{id}_X(x_1)=\mathrm{id}_X(x_2) \Rightarrow x_1=x_2.
@@ -625,7 +625,7 @@ Hence \(f\) is injective.
 
 \begin{frame}{Proof}
 
-\emph{Surjectivity:}  
+\emph{Surjectivity:}
 For any \(y \in Y\), set \(x=g(y)\). Then
 \[
 f(x)=f(g(y))=(f\circ g)(y)=\mathrm{id}_Y(y)=y.
@@ -639,7 +639,7 @@ Since \(f\) is both injective and surjective, \(f\) is bijective. \(\square\)
 
 \begin{frame}{Notes}
 \begin{itemize}
-    \item In the bundle context, a section gives a right inverse of \(\pi\).  
+    \item In the bundle context, a section gives a right inverse of \(\pi\).
     \item If \(\pi\) also had a left inverse, that would force \(\pi\) to be injective, which bundle projections typically are not (because fibers often contain multiple points).
     \item Thus for a general bundle, \(\pi\) is surjective but not injective, so it has sections, but no inverse redefining \(\pi\) as bijection.
 \end{itemize}

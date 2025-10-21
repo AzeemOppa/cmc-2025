@@ -54,10 +54,10 @@ k \otimes_R R^m \cong k^m,\qquad k \otimes_R R^n \cong k^n
 \]
 as $k$–vector spaces. Hence $k^m \cong k^n$ as vector spaces, so $m=n$.
 
-Therefore, any two bases of a finite free $R$–module have the same cardinality.     
+Therefore, any two bases of a finite free $R$–module have the same cardinality.
 \end{block}
 
-\textbf{Interpretation:}  
+\textbf{Interpretation:}
 If a module has two different bases, they must contain the same number of elements. This number - the dimension or \emph{rank}-measures the intrinsic “size” of the module, just as dimension does for vector spaces.
 
 
@@ -67,13 +67,13 @@ If a module has two different bases, they must contain the same number of elemen
 
 \begin{block}{Let $R$ be a CRWU, $m,n\in\mathbb{N}$.}
     \begin{enumerate}
-  \item[1] $\dim R^n = n$, because each element $(a_1,\dots,a_n)$ can be written uniquely as  
+  \item[1] $\dim R^n = n$, because each element $(a_1,\dots,a_n)$ can be written uniquely as
   \[
   (a_1,\dots,a_n) = a_1 e_1 + a_2 e_2 + \cdots + a_n e_n,
   \]
   where $e_i=(0,\dots,\underbrace{1}_{i},\dots,0)$ are linearly independent and span $R^n$.
 
-  \item[2] $\dim M_{m\times n}(R) = mn$, because every matrix $A=(a_{ij})$ can be expressed uniquely as  
+  \item[2] $\dim M_{m\times n}(R) = mn$, because every matrix $A=(a_{ij})$ can be expressed uniquely as
     $A = \sum_{i=1}^m \sum_{j=1}^n a_{ij}E_{ij},$
   where $E_{ij}$ has $1$ in position $(i,j)$ and $0$ elsewhere. These $mn$ matrices are linearly independent and span $M_{m\times n}(R)$.
 \end{enumerate}
@@ -83,12 +83,12 @@ If a module has two different bases, they must contain the same number of elemen
 \begin{frame}{Examples of Dimension}
 \begin{block}{Let $R$ be a CRWU, $m,n\in\mathbb{N}$.}
 \begin{enumerate}
-  \item[3] $\dim \mathbf{0} = 0$, because the zero module $\{0\}$ contains only the zero element.  
+  \item[3] $\dim \mathbf{0} = 0$, because the zero module $\{0\}$ contains only the zero element.
   The empty set $\varnothing$ is vacuously linearly independent and spans $\{0\}$, so it serves as a basis.
 
-  \item[4] $\dim R[x] = \infty$, because the set $\{1,x,x^2,x^3,\dots\}$ is linearly independent and spans all polynomials.  
+  \item[4] $\dim R[x] = \infty$, because the set $\{1,x,x^2,x^3,\dots\}$ is linearly independent and spans all polynomials.
   Every polynomial $f(x)=a_0+a_1x+\cdots+a_nx^n$ is a finite $R$–linear combination of these monomials.
-\end{enumerate}    
+\end{enumerate}
 \end{block}
 
 \end{frame}
@@ -100,7 +100,7 @@ Let $R$ be a CRWU, $V$ an $R$–module, and $v_1,\dots,v_m\in V$.
 \begin{align*}
 \operatorname{span}\{v_1,\dots,v_m\}
 := &\left\{\sum_{i=1}^m \lambda_i v_i \;\middle|\; \lambda_1,\dots,\lambda_m\in R\right\}\\
-=& \{\, w\in V \mid \exists\lambda_1,\dots,\lambda_m\in R,\; w=\sum_{i=1}^m \lambda_i v_i \,\}.    
+=& \{\, w\in V \mid \exists\lambda_1,\dots,\lambda_m\in R,\; w=\sum_{i=1}^m \lambda_i v_i \,\}.
 \end{align*}
 
 \end{block}
@@ -153,7 +153,7 @@ Thus $\operatorname{Im}(A)\subseteq \operatorname{span}\{c_j\}$. Conversely, any
 \begin{frame}{Proof of the Remark}
 
 \begin{proof}[Proof of Remark 2]
-Let $W:=\operatorname{span}\{v_1,\dots,v_m\}$. 
+Let $W:=\operatorname{span}\{v_1,\dots,v_m\}$.
 If $w=\sum \lambda_i v_i$ and $w'=\sum \mu_i v_i$, then for any $a,b\in R$,
 \[
 aw+bw'=\sum (a\lambda_i + b\mu_i) v_i \in W,
@@ -177,12 +177,12 @@ which is the $\mathbb{Q}$–vector space (or $\mathbb{Q}$–module) of all quadr
 \textbf{Reasoning.}
 \begin{itemize}
   \item Every quadratic polynomial $p(x)=a_0+a_1x+a_2x^2$ can be uniquely written as a linear combination of $1,x,x^2$.
-  \item The set $\{1,x,x^2\}$ is linearly independent, since  
+  \item The set $\{1,x,x^2\}$ is linearly independent, since
   $c_0\!\cdot\!1 + c_1x + c_2x^2 = 0 \Rightarrow c_0=c_1=c_2=0$.
   \item Therefore, $\{1,x,x^2\}$ forms a \textbf{basis} of $\operatorname{span}_{\mathbb{Q}}(S)$.
 \end{itemize}
 
-\textbf{Interpretation.}  
+\textbf{Interpretation.}
 Geometrically, the span operation constructs the smallest subspace (submodule) of $\mathbb{Q}[x]$ that contains $S$.
 \end{frame}
 
@@ -195,12 +195,12 @@ Let $R$ be a CRWU, $V,W$ be $R$–modules, and $f:V\to W$ a function.
 $f$ is \textbf{linear} if for all $v_1,v_2\in V$ and $\lambda\in R$,
 \begin{align*}
 f(v_1+v_2)= &f(v_1)+f(v_2),\\
-f(\lambda v)=&\lambda f(v).    
+f(\lambda v)=&\lambda f(v).
 \end{align*}
 \end{block}
 
 \begin{block}{Notation}
-The set of all $R$–linear maps $V\to W$ is denoted 
+The set of all $R$–linear maps $V\to W$ is denoted
 \[
 \operatorname{Hom}_R(V,W)\quad \text{or}\quad \operatorname{Hom}(V,W)\quad \text{or}\mathcal{L}(V,W).
 \]
@@ -300,24 +300,24 @@ $Df=0$ iff $f$ is constant, hence $\ker D$ are the constants. If $f=a_0+a_1x+a_2
     % Define the nodes using (x, y) coordinates
     \node (Rn) at (0, 0) {$\mathbb{R}^n$};
     % Position is down and left from Rn
-    \node (Coeff) at (-2.5, -2.5) {$\text{coefficients } (\lambda_i)$}; 
+    \node (Coeff) at (-2.5, -2.5) {$\text{coefficients } (\lambda_i)$};
     % Position is right of Rn
-    \node (Rm) at (5, 0) {$\mathbb{R}^m$}; 
+    \node (Rm) at (5, 0) {$\mathbb{R}^m$};
     % Position is right of Coeff
-    \node (Span) at (2.5, -2.5) [align=left] 
+    \node (Span) at (2.5, -2.5) [align=left]
         {$\lambda_1 c_1+\cdots+\lambda_n c_n \in \operatorname{span}\{c_1,\dots,c_n\}$};
-    
+
     % 1. R^n to R^m (Right Arrow: \mathcal{A})
     \draw[->] (Rn) -- node[above] {$\mathcal A$} (Rm);
-    
+
     % 2. R^n to Coefficients (Down-Left Arrow: dashed, label below)
     \draw[->, dashed] (Rn) -- (Coeff)
         node[midway, left, align=center] {
             $\text{choose }v=(\lambda_1,\dots,\lambda_n)^\top$
         };
-        
+
     % 3. Coefficients to Span (Right Arrow: mapsto)
-    \draw[->, transform canvas={yshift=-1pt}] (Coeff) -- (Span) 
+    \draw[->, transform canvas={yshift=-1pt}] (Coeff) -- (Span)
         node[midway, above] {$\mapsto$};
 
     % 4. Span to R^m (Up-Right Arrow: inclusion)
@@ -401,7 +401,7 @@ Let $R$ be a CRWU, $V$ a free $R$–module with basis $S=\{e_1,\dots,e_n\}$ (pos
 \[
 f(e_i)=w_i,\quad i=1,\dots,n.
 \]
-    
+
 \end{block}
 \end{frame}
 
@@ -420,7 +420,7 @@ Uniqueness: if $g$ is another linear map with $g(e_i)=w_i$, then for any $v=\sum
 $g(v)=\sum \lambda_i g(e_i)=\sum \lambda_i w_i=f(v)$. Hence $g=f$.
 \end{proof}
 
-    
+
 \end{frame}
 
 \begin{frame}{Example}
@@ -460,8 +460,8 @@ Linearity is immediate from linearity of coordinate extraction. Injectivity: $v^
 
 \begin{frame}{Example}
 
-\textbf{Setup.}  
-Let $V = \{\, a_0 + a_1x + a_2x^2 \mid a_0,a_1,a_2 \in R \,\}$ be the $R$–module (or vector space, if $R$ is a field) of quadratic polynomials,  
+\textbf{Setup.}
+Let $V = \{\, a_0 + a_1x + a_2x^2 \mid a_0,a_1,a_2 \in R \,\}$ be the $R$–module (or vector space, if $R$ is a field) of quadratic polynomials,
 and let $e = (1, x, x^2)$ be its ordered basis.
 
 \begin{block}{Coordinate Map}
@@ -487,7 +487,7 @@ a_2
 \vspace{-0.3cm}
 \begin{block}{Interpretation.}
 \begin{itemize}
-  \item The coordinate map $(\cdot)^e : V \to R^3$ translates each polynomial into its list of coefficients.  
+  \item The coordinate map $(\cdot)^e : V \to R^3$ translates each polynomial into its list of coefficients.
   \item It is a linear isomorphism — addition and scalar multiplication of polynomials correspond exactly to those of their coordinate vectors:
   \[
   (p+q)^e = p^e + q^e, \qquad (\lambda p)^e = \lambda p^e.
@@ -495,8 +495,8 @@ a_2
   \item Hence $V$ is \emph{algebraically identical} to $R^3$ under this basis, just viewed in a different “language” — coefficients instead of components.
 \end{itemize}
 
-\textbf{Visualization.}  
-Think of the polynomial $a_0+a_1x+a_2x^2$ as a point in $R^3$ whose coordinates are $(a_0,a_1,a_2)$ — the space of all quadratic shapes parameterized by their coefficients.    
+\textbf{Visualization.}
+Think of the polynomial $a_0+a_1x+a_2x^2$ as a point in $R^3$ whose coordinates are $(a_0,a_1,a_2)$ — the space of all quadratic shapes parameterized by their coefficients.
 \end{block}
 
 \end{frame}
@@ -506,7 +506,7 @@ Think of the polynomial $a_0+a_1x+a_2x^2$ as a point in $R^3$ whose coordinates 
 \begin{block}{Definition}
     Let $W^V$ denote all functions $V\to W$ with pointwise operations:
 \begin{align*}
-(f+g)(v):=&f(v)+g(v),\\ (\lambda f)(v):=&\lambda f(v).    
+(f+g)(v):=&f(v)+g(v),\\ (\lambda f)(v):=&\lambda f(v).
 \end{align*}
 \end{block}
 \begin{block}{Proposition.} $\operatorname{Hom}_R(V,W)\subseteq W^V$ is a submodule (closed under $+$ and $R$–scalars).
@@ -524,7 +524,7 @@ If $f,g\in\operatorname{Hom}_R(V,W)$ and $\lambda\in R$, for any $v,u\in V$:
 \[
 (f+g)(\alpha v)=f(\alpha v)+g(\alpha v)=\alpha f(v)+\alpha g(v)=\alpha (f+g)(v).
 \]
-So $f+g$ is linear. 
+So $f+g$ is linear.
 
 Similarly $(\lambda f)(v+u)=\lambda f(v+u)=\lambda f(v)+\lambda f(u)$ and $(\lambda f)(\alpha v)=\lambda \alpha f(v) = \alpha(\lambda f)(v)$, hence $\lambda f$ is linear.
 
@@ -542,7 +542,7 @@ f=D,\quad g=\mathrm{id}_V,\quad h=2f-3g.
 Then for $p(x)=a_0+a_1 x+a_2 x^2$,
 \begin{align*}
 h(p)=&2(a_1+2a_2 x)-3(a_0+a_1 x+a_2 x^2)\\
-=&(-3a_0+2a_1)\;+\;(-3a_1+4a_2)x\;+\;(-3a_2)x^2.    
+=&(-3a_0+2a_1)\;+\;(-3a_1+4a_2)x\;+\;(-3a_2)x^2.
 \end{align*}
 In coordinates $p^e=(a_0,a_1,a_2)^\top$,
 \[
@@ -622,7 +622,7 @@ with the identity
     \node (U) {$U$};
     \node (V) [right=4cm of U] {$V$};
     \node (W) [right=4cm of V] {$W$};
-    
+
     % Draw arrows
     \draw[->] (U) -- node[above] {$A$} (V);
     \draw[->] (V) -- node[above] {$B$} (W);

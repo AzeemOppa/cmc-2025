@@ -34,7 +34,6 @@ async function cmc_zip_generate(files, folder_name, archive_name)
   await cmc_archive_setup(folder, files);
   const content = await zip.generateAsync({ type: "blob" });
   cmc_link_generate(content, archive_name);
-  return 
 }
 
 async function cmc_download(files, folder_name, archive_name, element_id, event)
