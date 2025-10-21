@@ -18,23 +18,35 @@ async function cmc_archive_setup(folder, files)
   }
 }
 
-async function cmc_link_generate(content)
+async function cmc_link_generate(content, archive_name)
 {
   const link = document.createElement("a");
   link.href = URL.createObjectURL(content);
-  link.download = "cmc-2025-website.zip";
+  link.download = archive_name;
   link.click();
   URL.revokeObjectURL(link.href);
 }
 
-async function cmc_zip_generate()
+async function cmc_zip_generate(files, folder_name, archive_name)
 {
   const zip = new JSZip();
-  const folder = zip.folder("cmc-2025-website");
-  await cmc_archive_setup(folder, cmc_files);
+  const folder = zip.folder(folder_name);
+  await cmc_archive_setup(folder, files);
   const content = await zip.generateAsync({ type: "blob" });
-  cmc_link_generate(content);
+  cmc_link_generate(content, archive_name);
+  return 
 }
 
-document.getElementById('cmc_download_button')
-        .addEventListener('click', cmc_zip_generate);
+async function cmc_download(files, folder_name, archive_name, element_id, event)
+{
+  const generate = () => cmc_zip_generate(files, folder_name, archive_name);
+  const element = document.getElementById(element_id);
+  element.addEventListener(event, generate);
+}
+
+cmc_download(
+  cmc_files,
+  "cmc-2025-website",
+  "cmc-2025-website.zip",
+  "cmc-download-button",
+  "click");
