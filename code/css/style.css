@@ -19,7 +19,7 @@ br
 {
   display: block;
   content: "";
-  margin-top: 0;
+  margin: 4px 0;
 }
 
 td, th
@@ -33,6 +33,20 @@ td, th
 {
   margin-left: auto;
   margin-right: auto;
-  border-collapse: collapse; /* Optional, makes borders look better */
-  border: 1px solid #000; /* Optional, adds border */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+.download-button
+{
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
 }
