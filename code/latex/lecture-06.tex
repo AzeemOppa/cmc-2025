@@ -50,26 +50,26 @@ is an $R$–module isomorphism (linearity is entrywise; bijectivity follows by d
 \begin{block}{Definition.} For a CRWU $R$ and an $R$–module $V$, the \emph{dual module} is
 \[
 V^* := \operatorname{Hom}_R(V,R) \left[= \{f: V\to R|f\text{ is linear}\}\right].
-\]  
+\]
 \end{block}
-\begin{block}{Example}  
+\begin{block}{Example}
 \begin{align*}
 (R^2)^*=&\{f:R^2\to R\text{ linear}\,\}\\
-=&\{\,f(x_1,x_2)=\lambda_1 x_1+\lambda_2 x_2\mid \lambda_1,\lambda_2\in R\,\}.    
+=&\{\,f(x_1,x_2)=\lambda_1 x_1+\lambda_2 x_2\mid \lambda_1,\lambda_2\in R\,\}.
 \end{align*}
-    
+
 \end{block}
 \end{frame}
 
 \begin{frame}{Finite Free Case}
 
 \begin{block}{Remark: Dimension and Basis Dependence}
-Let $R$ be a commutative ring with unity (CRWU), and let $V$ be a finite--dimensional (free) $R$--module.  
+Let $R$ be a commutative ring with unity (CRWU), and let $V$ be a finite--dimensional (free) $R$--module.
 Then
 \[
 \dim(V^*) = \dim\left(\operatorname{Hom}_R(V, R)\right) = \dim(V).
 \]
-Indeed, each $R$--linear map $f:V\to R$ is determined uniquely by its values on a basis of $V$.  
+Indeed, each $R$--linear map $f:V\to R$ is determined uniquely by its values on a basis of $V$.
 If $V$ has basis $\{e_1,\dots,e_n\}$, the dual module $V^*$ has the dual basis $\{e^1,\dots,e^n\}$ where $e^i(e_j)=\delta^i_j$; hence both spaces have the same number of basis elements.
 \end{block}
 \textbf{Summary.}
@@ -164,7 +164,7 @@ Thus $e^1(x_1,x_2)=-\frac{1}{7}x_1+\frac{4}{7}x_2$.
 \[
 \mu_1+2\mu_2=0,\qquad 4\mu_1+\mu_2=1.
 \]
-\end{block}    
+\end{block}
 \end{frame}
 \begin{frame}{Example}
 \begin{block}{}
@@ -179,7 +179,7 @@ Thus $e^2(x_1,x_2)=\frac{2}{7}x_1-\frac{1}{7}x_2$.\\
 v = e^1(v)\,e_1 + e^2(v)\,e_2 \quad \text{for all } v\in \mathbb{R}^2.
 \]
     \end{block}
-    
+
 \end{frame}
 
 \begin{frame}{Matrix View}
@@ -225,7 +225,7 @@ Let $V,W$ be $R$–modules and $\phi\in\operatorname{Hom}_R(V,W)$. The \emph{dua
 is $R$–linear. In evaluation form, for $g\in W^*$ and $v\in V$,
 \[
 (\phi^* g)(v) = g\left(\phi(v)\right).
-\]    
+\]
 \end{block}
 
 
@@ -236,7 +236,7 @@ is $R$–linear. In evaluation form, for $g\in W^*$ and $v\in V$,
     \node (W) at (4,0) {$W$};
     \node (R1) at (0,-2) {$R$};
     \node (R2) at (4,-2) {$R$};
-    
+
     % Draw arrows
     \draw[->] (V) -- node[above] {$\phi$} (W);
     \draw[->] (V) -- node[left,align=center] {$(\phi^* g)(\cdot)$\\$=g(\phi(\cdot))$} (R1);
@@ -307,7 +307,7 @@ But $f^i(\phi(e_j))=a_{ij}$ by the very definition of the coefficients $a_{ij}$.
     \node (Wstar) at (0,0) {$W^*$};
     \node (Rm) at (4,0) {$R^m$};
     \node (Rn) at (0,-2) {$R^n$};
-    
+
     % Draw arrows
     \draw[->] (V) -- node[above] {$\phi$} (W);
     \draw[->] (Wstar) -- node[left] {$\phi^*$} (V);
@@ -330,7 +330,7 @@ But $f^i(\phi(e_j))=a_{ij}$ by the very definition of the coefficients $a_{ij}$.
 For $g\in W^*$ and $u\in U$,
 \begin{align*}
     \left((\psi\circ \phi)^* g\right)(u)=&g\left((\psi\circ \phi)(u)\right)=g\left(\psi(\phi(u))\right)=(\psi^* g)\left(\phi(u)\right)\\
-=&(\phi^*(\psi^* g))(u).    
+=&(\phi^*(\psi^* g))(u).
 \end{align*}
 Since both sides define the same functional on every $u$, we have equality of maps $W^*\to U^*$.
 \end{proof}
@@ -349,7 +349,7 @@ The dual map $\phi^*$ is defined by $(\phi^* f)(u) = f(\phi(u))$, where $f \in V
 
 
 \end{block}
-    
+
 \end{frame}
 
 \begin{frame}{Canonical Evaluation Map $\iota:V\to V^{**}$}
@@ -361,19 +361,19 @@ The dual map $\phi^*$ is defined by $(\phi^* f)(u) = f(\phi(u))$, where $f \in V
 
 \begin{center}
 \begin{tikzpicture}[>=Latex, node distance=3cm, auto] % Setting global styles
-    
+
     % 1. Define Nodes: V, V**, and R
     \node (V) at (0, 0) {$V$};
     \node (Vss) [right=of V] {$V^{**}$}; % V** is 3cm to the right of V
     \node (R) [below=of Vss] {$R$}; % R is 3cm directly below V**
-    
+
     % 2. Draw Forward Map (V -> V**) - Canonical Isomorphism
     \draw[->] (V) -- (Vss) node[midway, above] {$\iota$};
 
     % 3. Draw Diagonal Map (V -> R) - Evaluation by f
     % Note: f is a functional, f \in V^*
     \draw[->] (V) -- (R) node[midway, below left] {$f$};
-    
+
     % 4. Draw Downward Map (V** -> R) - Evaluation Map
     % The arrow is dashed as it often represents a construction or evaluation process.
     \draw[->, dashed] (Vss) -- (R) node[midway, right] {$(\cdot)(f)$};
@@ -385,7 +385,7 @@ The dual map $\phi^*$ is defined by $(\phi^* f)(u) = f(\phi(u))$, where $f \in V
 \begin{frame}{Proposition}
 
 \begin{block}{Finite Free Case} If $V$ is finite free, then $\iota$ is an isomorphism; we write $V \simeq V^{**}$ \emph{canonically}.
-    
+
 \end{block}
 
 \begin{proof}
@@ -404,7 +404,7 @@ Then the square commutes:
 \vspace{-0.7cm}
 \begin{center}
 \begin{tikzpicture}[>=Latex, node distance=3cm, auto]
-    
+
     % 1. Define Nodes: V, W, V**, and W**
     \node (V) {$V$};
     \node (W) [right=of V] {$W$};
@@ -413,29 +413,29 @@ Then the square commutes:
 
     % 2. Draw Top Arrow (V -> W)
     \draw[->] (V) -- (W) node[midway, above] {$\phi$};
-    
+
     % 3. Draw Left Arrow (V -> V**)
     \draw[->] (V) -- (Vss) node[midway, left] {$\iota_V$};
-    
+
     % 4. Draw Right Arrow (W -> W**)
     \draw[->] (W) -- (Wss) node[midway, right] {$\iota_W$};
-    
+
     % 5. Draw Bottom Arrow (V** -> W**)
     \draw[->] (Vss) -- (Wss) node[midway, below] {$\phi^{**}$};
 \end{tikzpicture}
 \end{center}
-    
+
 \end{block}
 \end{frame}
 
 \begin{frame}{Proof}
-    
+
 \begin{proof}
 For $v\in V$ and $g\in W^*$,
 \begin{align*}
 \left(\phi^{**}\circ \iota_V\right)(v)(g)=& \iota_V(v)(\phi^* g) = (\phi^* g)(v)=g(\phi(v))\\
 =& \iota_W(\phi(v))(g)\\
-=& \left(\iota_W\circ \phi\right)(v)(g).    
+=& \left(\iota_W\circ \phi\right)(v)(g).
 \end{align*}
 Thus $\phi^{**}\circ \iota_V=\iota_W\circ \phi$.
 \end{proof}
@@ -456,7 +456,7 @@ Equivalently, the \emph{curried} map $\widetilde{\Phi}:U\to \operatorname{Hom}_R
 \[
 \Phi\in \mathcal{L}(U,V;W) \iff \widetilde{\Phi}\in \operatorname{Hom}_R\left(U,\operatorname{Hom}_R(V,W)\right).
 \]
-    
+
 \end{block}
 
 \end{frame}
@@ -469,7 +469,7 @@ Equivalently, the \emph{curried} map $\widetilde{\Phi}:U\to \operatorname{Hom}_R
 
 \begin{center}
 \begin{tikzpicture}[>=Latex, node distance=4cm, auto] % Increased node distance for better spacing of Hom-space
-    
+
     % 1. Define Nodes
     \node (UV) {$U \times V$};
     \node (W) [right=of UV] {$W$};
@@ -481,17 +481,17 @@ Equivalently, the \emph{curried} map $\widetilde{\Phi}:U\to \operatorname{Hom}_R
     % 2. Draw Arrows
     % Top: U x V -> W
     \draw[->] (UV) -- (W) node[midway, above] {$\Phi$};
-    
+
     % Left: U x V -> U (Curry map)
     \draw[->, dashed] (UV) -- (U) node[midway, left] {$\text{curry}$};
-    
+
     % Bottom: U -> Hom_R(V, W)
     \draw[->] (U) -- (Hom) node[midway, below] {$\widetilde{\Phi}$};
-    
+
     % Right/Up: Hom_R(V, W) -> W (Evaluation map)
     % We need to manually adjust the start and end points of the evaluation arrow
     \draw[->, dashed] (Hom.north) -- (W.south) node[midway, right] {$\mathrm{ev}$};
-    
+
 \end{tikzpicture}
 \end{center}
 \end{frame}
