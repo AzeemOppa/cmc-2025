@@ -1,0 +1,517 @@
+% Beamer presentation
+\input{preamble.tex}
+\cmclecture{7}
+\date{22 October 2025}
+
+\begin{document}
+
+%========================= TITLE =========================
+\begin{frame}
+  \cmctitleframe
+\end{frame}
+
+\begin{frame}{Definition}
+%\vspace{-0.2cm}
+\begin{block}{by Universal Property}
+  Let $R$ be a \textbf{CRWU}. Let $U,V$ be $R$–modules.
+A tensor product of $U$ and $V$ is an $R$–module $X$ together with a bilinear map
+\[
+\tau:U\times V\longrightarrow X
+\]
+such that for every $R$–module $W$, \emph{precomposition by $\tau$} yields a natural isomorphism
+\[
+\Phi_W:\ \operatorname{Hom}_R(X,W)\ \simeq\ \mathcal{L}(U,V;W),\qquad
+\Phi_W(\alpha)=\alpha\circ \tau.
+\]
+Equivalently: bilinear maps $U\times V\to W$ \emph{factor uniquely} through a \textbf{linear} map $X\to W$.
+We denote this essentially unique object by $U\otimes_R V$, and write $u\otimes v:=\tau(u,v)$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Existence, Uniqueness, and Identities}
+\begin{block}{Theorem (Existence and uniqueness up to unique iso)}
+For $R$ a CRWU and $U,V$ $R$–modules, a tensor product $U\otimes_R V$ exists; any two such pairs $(X,\tau)$ and $(X',\tau')$ are uniquely isomorphic by the universal property.
+\end{block}
+
+\begin{block}{Canonical identities in $U\otimes_R V$ (forced by bilinearity)}
+\[
+(u_1+u_2)\otimes v = u_1\otimes v + u_2\otimes v,\qquad
+u\otimes (v_1+v_2) = u\otimes v_1 + u\otimes v_2,
+\]
+\[
+(\lambda u)\otimes v = u\otimes (\lambda v) = \lambda (u\otimes v),\quad
+\forall\, u,u_1,u_2\in U,\ v,v_1,v_2\in V,\ \lambda\in R.
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Identities}
+\begin{block}{Finite bases.} If $e=(e_1,\dots,e_m)$ is a basis of $U$ and $f=(f_1,\dots,f_n)$ a basis of $V$, then
+\[
+\mathcal{B}=\{\,e_i\otimes f_j \mid 1\le i\le m,\ 1\le j\le n\,\}
+\]
+is a basis of $U\otimes_R V$, hence
+\[
+\dim(U\otimes_R V)= (\dim U)(\dim V)=mn.
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Explicit Basis Example}
+\begin{block}{Example.}
+Over $R=\mathbb{R}$, let $U=\mathbb{R}^2$ with basis
+\vspace{-0.3cm}
+\begin{align*}
+    e_1=&(1,0),\\
+    e_2=&(0,1)
+\end{align*}
+and $V=\mathbb{R}^3$ with basis
+\vspace{-0.4cm}
+\begin{align*}
+    f_1 = &(1,0,0),\\ f_2 = &(0,1,0),\\ f_3 = &(0,0,1).
+\end{align*}
+
+Then a basis of $\mathbb{R}^2\otimes_{\mathbb{R}} \mathbb{R}^3$ is
+\vspace{-0.2cm}
+\[
+\{\,e_1\otimes f_1,\ e_1\otimes f_2,\ e_1\otimes f_3,\ e_2\otimes f_1,\ e_2\otimes f_2,\ e_2\otimes f_3\,\},
+\]
+so $\dim(\mathbb{R}^2\otimes \mathbb{R}^3)=6=2\cdot 3$.
+
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Symmetry for $\otimes$}
+\begin{block}{Proposition (Symmetry)}
+There is a canonical $R$–module isomorphism
+\[
+\sigma_{U,V}: U\otimes_R V \simeq V\otimes_R U,\qquad \sigma_{U,V}(u\otimes v)=v\otimes u,
+\]
+characterized by bilinearity; it is natural in both variables.
+\end{block}
+\begin{proof}
+The map $(u,v)\mapsto v\otimes u$ is bilinear $U\times V\to V\otimes U$, hence by universality induces a unique linear map $U\otimes V\to V\otimes U$. Its inverse is the same recipe with $U,V$ swapped.
+\end{proof}
+
+\end{frame}
+
+\begin{frame}{Unit for $\otimes$}
+
+\begin{block}{Proposition (Unit object)}
+There are canonical isomorphisms
+\[
+\lambda_U: R\otimes_R U \simeq U,\qquad \lambda_U(1\otimes u)=u,
+\]
+\[
+\rho_U: U\otimes_R R \simeq U,\qquad \rho_U(u\otimes 1)=u,
+\]
+extended $R$–linearly.
+\end{block}
+\begin{proof}
+Bilinearity of $(\lambda,u)\mapsto \lambda u$ (resp.\ $(u,\lambda)\mapsto \lambda u$) gives unique linear maps inverse to $u\mapsto 1\otimes u$ (resp.\ $u\mapsto u\otimes 1$).
+\end{proof}
+\end{frame}
+
+\begin{frame}{Definition and Isomorphism Criteria}
+\begin{block}{Definition}
+Let $U,V$ be $R$–modules. Define the $R$–linear map
+\[
+\rho: U^*\otimes_R V \longrightarrow \operatorname{Hom}_R(U,V),\qquad
+\rho(f\otimes v)(u):= f(u)\,v.
+\]
+\end{block}
+
+\begin{block}{Proposition}
+If $U=R$ or $V=R$, or if $U$ and $V$ are finite free, then $\rho$ is an isomorphism.
+\end{block}
+\end{frame}
+
+\begin{frame}{Proposition (Proof)}
+
+\begin{proof}
+(1) If $U=R$, then $U^*\cong R$ via $f\mapsto f(1)$; $\rho(\lambda\otimes v)(\mu)=\lambda\mu\, v$, identifying $R\otimes V\cong V$ and $\operatorname{Hom}_R(R,V)\cong V$, so $\rho$ is the identity under these identifications.
+
+(2) If $V=R$, then $\rho:U^*\otimes R\to \operatorname{Hom}_R(U,R)=U^*$ identifies with the unit isomorphism $U^*\otimes R\cong U^*$.
+
+(3) If $U,V$ are finite free with bases $(e_i)_{i=1}^m$ and $(v_j)_{j=1}^n$ and dual $(e^i)$, then
+\[
+U^*\otimes V \cong R^{m}\otimes R^{n}\cong R^{mn}\cong \operatorname{Hom}_R(U,V),
+\]
+and $\rho(e^i\otimes v_j)$ is the rank–one map $u\mapsto e^i(u)\,v_j$. These $mn$ maps form the standard basis of $\operatorname{Hom}_R(U,V)$ with respect to $(e_i)$ and $(v_j)$. Hence $\rho$ is bijective.
+\end{proof}
+\end{frame}
+
+\begin{frame}{A Structural Corollary}
+\vspace{-0.3cm}
+\begin{block}{Corollary (Polarization into $V$ and $V^*$)}
+Let $R$ be a CRWU and $V$ a finite free $R$–module. Any $R$–module obtained from $V$ by iterating constructions using $R$–modules, tensor products, and $\operatorname{Hom}_R$ is (noncanonically) isomorphic to
+\[
+\underbrace{V\otimes\cdots\otimes V}_{m\ \text{times}}\ \otimes\
+\underbrace{V^*\otimes\cdots\otimes V^*}_{n\ \text{times}}
+\quad\text{for some }m,n\in\mathbb{N}.
+\]
+\end{block}
+\vspace{-0.3cm}
+\begin{proof}
+Proceed by structural induction on the expression. The base objects are $V$ and $R$ (which is $V^{\otimes 0}$).
+For $\operatorname{Hom}_R(U,W)$ use the finite free isomorphism $U^*\otimes W \cong \operatorname{Hom}_R(U,W)$; for a tensor $X\otimes Y$ concatenate the tensor powers; for direct factors already of the form $V^{\otimes m}\otimes (V^*)^{\otimes n}$ the claim is immediate. Each step keeps the expression within a tensor power of $V$ and $V^*$.
+\end{proof}
+\end{frame}
+
+\begin{frame}{Dual of a Tensor Product}
+\begin{block}{Note}
+If $U,V$ are finite free $R$–modules, then there is a canonical isomorphism
+\begin{align*}
+    (U\otimes_R V)^*\ &\cong\ \operatorname{Hom}_R(U\otimes V,R)\\\ &\cong\ \operatorname{Hom}_R\!\big(U,\operatorname{Hom}_R(V,R)\big)
+\ \cong\ U^*\otimes_R V^*.
+\end{align*}
+
+\end{block}
+\begin{proof}
+Use the currying isomorphism $\operatorname{Hom}_R(U\otimes V,R)\cong \mathcal{L}(U,V;R)$ and then apply $\rho: U^*\otimes V^* \xrightarrow{\sim} \mathcal{L}(U,V;R)$ (finite free case). Naturality shows canonicity.
+\end{proof}
+\end{frame}
+
+
+\begin{frame}{Definition and Basic Properties}
+\begin{block}{Definition (Direct sum of two $R$–modules).}
+Let $R$ be a CRWU and let $U,V$ be $R$–modules.
+Define the \emph{direct sum} $U\oplus V$ to be the cartesian product $U\times V$ endowed with componentwise addition and scalar multiplication:
+\begin{align*}
+(u_1\oplus v_1) +_{U\oplus V} (u_2\oplus v_2) &= (\,u_1 +_{U} u_2\,)\ \oplus\ (\,v_1 +_{V} v_2\,),\\
+\lambda\cdot_{U\oplus V} (u\oplus v) &= (\lambda\cdot_U u)\ \oplus\ (\lambda\cdot_V v),
+\end{align*}
+for all $u,u_1,u_2\in U$, $v,v_1,v_2\in V$, and $\lambda\in R$.
+We \textbf{write elements} of $U\oplus V$ as $u\oplus v$ (with $u\in U$, $v\in V$).
+The \textbf{zero} is $0_{U\oplus V}=0_U\oplus 0_V$, and the \textbf{additive inverse} is
+\begin{align*}
+-(u\oplus v)=(-u)\oplus(-v).
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Definition and Basic Properties}
+\begin{block}{}
+The \textbf{canonical injections} and \textbf{projections} are
+\small\begin{align*}
+i_U:U\to U\oplus V,\quad i_U(u)=u\oplus 0, \qquad &
+i_V:V\to U\oplus V,\quad i_V(v)=0\oplus v,\\
+\pi_U:U\oplus V\to U,\quad \pi_U(u\oplus v)=u, \qquad &
+\pi_V:U\oplus V\to V,\quad \pi_V(u\oplus v)=v,
+\end{align*}
+satisfying $\pi_U\circ i_U=\mathrm{id}_U$, $\pi_V\circ i_V=\mathrm{id}_V$, and $\pi_U\circ i_V=\pi_V\circ i_U=0$.
+\textbf{Universal property (biproduct):} For any $R$–module $W$ and maps $f:U\to W$, $g:V\to W$, there is a unique $R$–linear map
+\begin{align*}
+f\oplus g:U\oplus V\to W,\qquad (f\oplus g)(u\oplus v)=f(u)+_W g(v),
+\end{align*}
+and dually, given $h:W\to U$, $k:W\to V$, there is a unique $R$–linear map
+\begin{align*}
+\langle h,k\rangle:W\to U\oplus V,\qquad \langle h,k\rangle(w)=h(w)\oplus k(w).
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Basic Properties}
+\begin{block}{Finite bases and dimension.} If $U,V$ are finite free with bases $e=(e_1,\dots,e_m)$ and $f=(f_1,\dots,f_n)$, then
+\[
+\{\,e_1\oplus 0,\dots, e_m\oplus 0,\ 0\oplus f_1,\dots,0\oplus f_n\,\}
+\]
+is a basis of $U\oplus V$, \\
+hence $\dim(U\oplus V)=\dim U+\dim V=m+n$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Example}
+\vspace{-0.3cm}
+\begin{block}{$\mathbb{R}\otimes \mathbb{R}^2 \simeq \mathbb{R}^3$}
+Let $R=\mathbb{R}$.
+Take $\mathbb{R}$ as a $1$–dimensional real module with standard basis $e_1=1$, and let $\mathbb{R}^2$ have basis $f_1=(1,0), \quad f_2=(0,1).$
+Then the tensor product $\mathbb{R}\otimes \mathbb{R}^2$ has basis $\{\, e_1\otimes f_1,\ e_1\otimes f_2 \,\}.$ Now consider $\mathbb{R}\otimes \mathbb{R}^2$ as a subspace of $\mathbb{R}^3$ under the canonical isomorphism
+\vspace{-0.3cm}
+\begin{align*}
+\lambda_{\mathbb{R}^2}:\mathbb{R}\otimes \mathbb{R}^2 \longrightarrow \mathbb{R}^3, \qquad
+\lambda_{\mathbb{R}^2}(r\otimes (a,b)) = r(1,a,b) = (r, ra, rb).
+\end{align*}
+Hence the basis of $\mathbb{R}\otimes \mathbb{R}^2$ corresponds to
+\vspace{-0.3cm}
+\begin{align*}
+\lambda_{\mathbb{R}^2}(1\otimes f_1)=(1,1,0), \qquad
+\lambda_{\mathbb{R}^2}(1\otimes f_2)=(1,0,1),
+\end{align*}
+and the image spans $\mathbb{R}^3$. Thus we obtain the natural isomorphism $\mathbb{R}\otimes \mathbb{R}^2 \ \cong\ \mathbb{R}^3,$ whose basis corresponds to $\{\,1\otimes f_1,\ 1\otimes f_2,\ 1\otimes (f_1+f_2)\,\}$ forming the standard coordinate directions in $\mathbb{R}^3$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Canonical Isomorphisms}
+\begin{block}{(1) Commutativity of $\oplus$.}
+\[
+\chi:U\oplus V\simeq V\oplus U,\quad \chi(u\oplus v)=v\oplus u.
+\]
+$\chi$ is linear with inverse itself.
+\end{block}
+
+\begin{block}{(2) Associativity of $\oplus$.}
+\[
+\alpha:(U\oplus V)\oplus W \simeq U\oplus (V\oplus W),\quad \alpha((u\oplus v)\oplus w)=u\oplus (v\oplus w).
+\]
+Linear with inverse $u\oplus (v\oplus w)\mapsto (u\oplus v)\oplus w$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Canonical Isomorphisms}
+\begin{block}{(3) Unit for $\oplus$.}
+\[
+\eta: U\oplus 0 \simeq U,\quad \eta(u\oplus 0)=u,\qquad
+\zeta: 0\oplus U \simeq U,\quad \zeta(0\oplus u)=u.
+\]
+Both linear with evident inverses.
+
+\end{block}
+
+\begin{block}{(4) Dual of a direct sum.}
+\[
+\Delta: U^*\oplus V^* \simeq (U\oplus V)^*,\quad
+\Delta(f\oplus g)(u\oplus v)= f(u)+g(v).
+\]
+Linear and bijective (construct inverse by restriction to the summands).
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Canonical Isomorphisms}
+\begin{block}{(5) Distributivity of $\otimes$ over $\oplus$ (left).}
+\[
+\delta:(U\oplus V)\otimes W \simeq (U\otimes W)\oplus (V\otimes W),\
+\delta\big((u\oplus v)\otimes w\big)=(u\otimes w)\oplus (v\otimes w).
+\]
+Well-defined by bilinearity; inverse given by $(u\otimes w)\oplus (v\otimes w)\mapsto (u\oplus v)\otimes w$.
+\end{block}
+
+\begin{block}{(6) Distributivity (right).}
+\[
+\delta': U\otimes (V\oplus W) \simeq (U\otimes V)\oplus (U\otimes W),\
+\delta'(u\otimes (v\oplus w))=(u\otimes v)\oplus (u\otimes w).
+\]
+Analogous proof.
+\end{block}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{External Direct Sums over an Index Set}
+\begin{block}{Definition (External direct sum).}
+Let $R$ be a CRWU, $I$ a (possibly infinite) set, and $\{A_i\}_{i\in I}$ a family of $R$–modules.
+Define
+\begin{align*}
+\bigoplus_{i\in I} A_i
+:= \left\{\, (a_i)_{i\in I} \ \middle|\ a_i\in A_i,\ \text{and } a_i=0 \text{ for all but finitely many } i \,\right\}.
+\end{align*}
+Operations are pointwise:
+\begin{align*}
+(a_i)_{i\in I} + (b_i)_{i\in I} &= (a_i+b_i)_{i\in I},
+& \lambda (a_i)_{i\in I} &= (\lambda a_i)_{i\in I}.
+\end{align*}
+We write a typical element as a finite sum $a_{i_1}\oplus \cdots \oplus a_{i_n}$ with $a_{i_k}\in A_{i_k}$.
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Example}
+\begin{block}{Polynomials as an Infinite Direct Sum}
+    For a CRWU $R$,
+\begin{align*}
+R[x]
+= \bigoplus_{i=0}^\infty \operatorname{Span}_R\{x^i\}
+= \{a_0\mid a_0\in R\}\ \oplus\ \{a_1x\mid a_1\in R\}\ \oplus\ \cdots ,
+\end{align*}
+since any polynomial has finitely many nonzero coefficients. The summand $\operatorname{Span}_R\{x^i\}\cong R$ records the $x^i$–coefficient.
+\end{block}
+\end{frame}
+
+% ============================================================
+\begin{frame}{$R$–Algebras}
+\vspace{-0.3cm}
+\begin{block}{Definition (Algebra over a CRWU).}
+Let $(V,+)$ be an abelian group with scalar multiplication $\cdot : R\times V\to V$ making $V$ an $R$–module, and a bilinear product $* : V\times V\to V$.
+Then $(V,+,*,\cdot)$ is an $R$–algebra if $*$ is distributive over $+$ and $R$–linear in each slot:
+\vspace{-0.3cm}
+\begin{align*}
+(x+y)*z &= x*z + y*z, & x*(y+z) &= x*z + x*z,\\
+(\lambda x)*y &= \lambda (x*y), & x*(\lambda y) &= \lambda (x*y),
+\end{align*}
+for all $x,y,z\in V$, $\lambda\in R$. If $*$ is associative/unital/commutative, we say the algebra has that property.
+\end{block}
+\vspace{-0.3cm}
+\begin{block}{Remark:} Lie algebras use a different product (the Lie bracket) which is bilinear, alternating, and satisfies Jacobi; it is neither associative nor commutative.
+\end{block}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{block}{Polynomial Algebras}
+\begin{itemize}
+\item $(R[x],+,\cdot)$ with usual polynomial multiplication is an associative, unital (unit $1$), and commutative $R$–algebra.
+\item $R[x_1,\dots,x_n]$ is likewise associative, unital, commutative, and infinite–dimensional (unless $n=0$).
+\end{itemize}
+\end{block}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Tensor Algebra $T(V)$}
+\textbf{Definition (Tensor algebra).}
+Let $R$ be a CRWU and $V$ an $R$–module. The tensor algebra is
+\begin{align*}
+T(V):=\bigoplus_{i=0}^\infty T^i(V), \ T^0(V):=R,\ T^1(V):=V,\quad T^i(V):=V^{\otimes i}\ (i\ge 2),
+\end{align*}
+with multiplication induced by tensor concatenation:
+\begin{align*}
+T^i(V)\times T^j(V)\to T^{i+j}(V),\qquad (x,y)\mapsto x\otimes y.
+\end{align*}
+Thus $T(V)$ is the smallest associative unital $R$–algebra containing $V$.
+If $\dim V = n < \infty$ with basis $e_1,\dots,e_n$, then $\dim T^i(V)=n^i$ and a basis is
+\begin{align*}
+\{\, e_{j_1}\otimes \cdots \otimes e_{j_i} \mid 1\le j_k\le n \,\}.
+\end{align*}
+The full algebra has the graded decomposition $T(V)=\bigoplus_{i=0}^\infty T^i(V)$.
+\end{frame}
+
+\begin{frame}{Degree and Graded Algebras}
+\begin{block}{}
+\textbf{Degree.} If $x\in T^i(V)$ and $y\in T^j(V)$, then
+\begin{align*}
+x\otimes y \in T^{i+j}(V),\qquad \deg(x)=i.
+\end{align*}
+
+\textbf{Definition (Graded $R$–algebra).}
+An $R$–algebra $A$ is \emph{graded} if $A=\bigoplus_{i=0}^\infty A_i$ as $R$–modules and
+\begin{align*}
+A_i\cdot A_j \subseteq A_{i+j}\qquad \text{for all } i,j\ge 0.
+\end{align*}
+\textbf{Examples.} Polynomial algebras $R[x_1,\dots,x_n]$ and tensor algebras $T(V)$ are graded by total degree.
+\end{block}
+\end{frame}
+
+\begin{frame}{Concrete Degree Computation in $T(\mathbb{R}^2)$}
+\begin{block}{}
+Let $V=\mathbb{R}^2$ with basis $e_1=(1,0)$, $e_2=(0,1)$. Consider
+\begin{align*}
+x &= 2\,e_1\otimes e_1 \;-\; 3\,e_1\otimes e_2 \in T^2(V),\\
+y &= \;e_1\otimes e_2\otimes e_1 \;+\; 2\,e_1\otimes e_1\otimes e_1 \in T^3(V).
+\end{align*}
+Then $\deg(x)=2$, $\deg(y)=3$, and
+\begin{align*}
+x\otimes y \in T^{5}(V),\qquad
+y\otimes x \in T^{5}(V).
+\end{align*}
+Each is a linear combination of basis monomials of length $5$ in $\{e_1,e_2\}$.
+\end{block}
+\end{frame}
+
+% ============================================================
+\begin{frame}{A Ring with $r^2=0$ is Anti-commutative}
+\begin{block}{Proposition.}
+Let $R$ be a ring such that $r^2=0$ for all $r\in R$. Then for all $r,s\in R$,
+\begin{align*}
+rs + sr = 0 \quad \text{(i.e.\ $rs=-sr$).}
+\end{align*}
+\end{block}
+
+\begin{proof}
+Compute $(r+s)^2$ in two ways. On the one hand, by hypothesis $(r+s)^2=0$.
+On the other hand,
+\begin{align*}
+(r+s)^2 = r^2 + rs + sr + s^2 = 0 + rs + sr + 0 = rs + sr.
+\end{align*}
+Hence $rs+sr=0$ for all $r,s\in R$.
+\end{proof}
+\end{frame}
+
+% ============================================================
+\begin{frame}{Alternating (Exterior-type) Algebras}
+\begin{block}{Definition (Alternating algebra).}
+Let $R$ be a CRWU and $A=\bigoplus_{i=0}^\infty A_i$ a graded associative unital $R$–algebra with $1\in A_0$.
+We say $A$ is \emph{alternating} if
+\begin{align*}
+v^2=0 \quad \text{for all } v\in A_1.
+\end{align*}
+Equivalently (over $2\in R^\times$), for $v,w\in A_1$,
+\begin{align*}
+vw = -wv.
+\end{align*}
+\end{block}
+\textit{Heuristic:} Elements of degree $1$ anticommute; the algebra is generated in degree $1$ subject to these relations.
+\end{frame}
+
+\begin{frame}{Key Identities in A-G-A}
+\begin{block}{Proposition.}
+Let $A=\bigoplus_{i=0}^\infty A_i$ be an alternating graded $R$–algebra (associative, unital). Then:
+\begin{enumerate}
+\item If $j\in\mathbb{N}$ is odd and $v\in A_j$ is homogeneous, then $v^2=0$.
+\item If $v\in A_i$ and $w\in A_j$ are homogeneous, then
+\begin{align*}
+v\,w = (-1)^{ij} \, w\,v .
+\end{align*}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Proof}
+(2) First prove the claim for $v,w\in A_1$ (this is the defining property: $vw=-wv$).
+Extend to arbitrary homogeneous $v\in A_i$ and $w\in A_j$ by writing
+\end{block}
+\end{frame}
+
+\begin{frame}{Alternating Graded Algebras}
+\vspace{-0.3cm}
+\begin{proof}
+\vspace{-0.9cm}
+\begin{align*}
+v = v_1\cdots v_i,\qquad w = w_1\cdots w_j \qquad (v_k,w_\ell\in A_1),
+\end{align*}
+and moving each $v_k$ past all $w_\ell$ using $v_k w_\ell = - w_\ell v_k$. This introduces $ij$ sign changes:
+\vspace{-0.2cm}
+\begin{align*}
+v\,w = (v_1\cdots v_i)(w_1\cdots w_j) = (-1)^{ij} (w_1\cdots w_j)(v_1\cdots v_i) = (-1)^{ij} w\,v.
+\end{align*}
+(1) Put $w=v$ with $\deg v = j$; then
+\vspace{-0.2cm}
+\begin{align*}
+v^2 = (-1)^{jj} v^2 = (-1)^{j^2} v^2.
+\end{align*}
+If $j$ is odd, $(-1)^{j^2}=-1$, hence $v^2=-v^2$, so $2v^2=0$.
+Over any CRWU in which the alternating relation is imposed (e.g.\ exterior algebras over $\mathbb{Z}$ or fields of char $\ne 2$), this forces $v^2=0$. In particular, in the exterior algebra $\bigwedge V$, $v\wedge v=0$ for all odd-degree homogeneous $v$.
+\end{proof}
+\end{frame}
+
+\begin{frame}{Worked Sign Example}
+\begin{block}{}
+
+\end{block}
+Let $v=v_1 v_2$ with $v_1,v_2\in A_1$ (so $\deg v=2$) and $w=w_1 w_2 w_3$ with $w_k\in A_1$ (so $\deg w=3$).
+Then by the previous proposition,
+\begin{align*}
+w v = (-1)^{(\deg w)(\deg v)}\, v w = (-1)^{3\cdot 2}\, v w = (+1)\, v w.
+\end{align*}
+Concretely, moving $v_1$ past $w_1,w_2,w_3$ produces $3$ sign flips, and moving $v_2$ past $w_1,w_2,w_3$ produces another $3$ sign flips, totaling $6$ flips: an even number $\Rightarrow$ no net sign.
+\end{frame}
+
+% ============================================================Tensor product. R-algebras
+\begin{frame}{Summary}
+\begin{itemize}
+\item $U\otimes_R V$ represents bilinear maps: $\operatorname{Hom}_R(U\otimes V,W)\cong \mathcal{L}(U,V;W)$; basis tensors $e_i\otimes f_j$ give $\dim(U\otimes V)=\dim U\cdot \dim V$.
+\item Canonical isomorphisms: $U\otimes V \cong V\otimes U$, $R\otimes U \cong U$, and $\rho:U^*\otimes V\to \operatorname{Hom}_R(U,V)$ (iso in finite free cases).
+\item Direct sums: $U\oplus V$ has block basis and $\dim(U\oplus V)=\dim U+\dim V$; $(U\oplus V)\otimes W \cong (U\otimes W)\oplus (V\otimes W)$; $(U\oplus V)^*\cong U^*\oplus V^*$.
+\item $R$–algebras: $R$–modules with a bilinear product; polynomial algebras are associative, unital, commutative.
+\item Tensor algebra $T(V)=\bigoplus_{i\ge 0} V^{\otimes i}$ is graded; $\dim T^i(V)= (\dim V)^i$.
+\item Alternating graded algebras impose $v^2=0$ for $v\in A_1$; consequence: graded sign rule $vw=(-1)^{ij}wv$, and odd-degree squares vanish.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Thanks}
+  \cmcendframe
+\end{frame}
+
+\end{document}
