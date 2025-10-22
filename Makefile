@@ -31,7 +31,7 @@ _website_without_files_list :=\
 
 build/website/files.js: $(_website_without_files_list)
 	echo "const cmc_files =\n[" > build/website/files.js
-	find build/website -type f | sed "s|build/website/||; s/.*/ '&',/"\
+	find build/website -type f | sort | sed "s|build/website/||; s/.*/ '&',/"\
 	  >> build/website/files.js
 	echo "];" >> build/website/files.js
 
