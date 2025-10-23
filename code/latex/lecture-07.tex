@@ -124,7 +124,7 @@ Let $U,V$ be $R$–modules. Define the $R$–linear map
 \end{block}
 
 \begin{block}{Proposition}
-If $U=R$ or $V=R$, or if $U$ and $V$ are finite free, then $\rho$ is an isomorphism.
+If $U=R$ or $V=R$, or if $U$ and $V$ are finite-dimensional, then $\rho$ is an isomorphism.
 \end{block}
 \end{frame}
 
@@ -135,7 +135,7 @@ If $U=R$ or $V=R$, or if $U$ and $V$ are finite free, then $\rho$ is an isomorph
 
 (2) If $V=R$, then $\rho:U^*\otimes R\to \operatorname{Hom}_R(U,R)=U^*$ identifies with the unit isomorphism $U^*\otimes R\cong U^*$.
 
-(3) If $U,V$ are finite free with bases $(e_i)_{i=1}^m$ and $(v_j)_{j=1}^n$ and dual $(e^i)$, then
+(3) If $U,V$ are finite-dimensional with bases $(e_i)_{i=1}^m$ and $(v_j)_{j=1}^n$ and dual $(e^i)$, then
 \[
 U^*\otimes V \cong R^{m}\otimes R^{n}\cong R^{mn}\cong \operatorname{Hom}_R(U,V),
 \]
@@ -146,7 +146,7 @@ and $\rho(e^i\otimes v_j)$ is the rank–one map $u\mapsto e^i(u)\,v_j$. These $
 \begin{frame}{A Structural Corollary}
 \vspace{-0.3cm}
 \begin{block}{Corollary (Polarization into $V$ and $V^*$)}
-Let $R$ be a CRWU and $V$ a finite dimensional $R$–module.
+Let $R$ be a CRWU and $V$ a finite-dimensional $R$–module.
 Any $R$–module obtained from $V$ and $R$ by iterating constructions using
 tensor products and $\operatorname{Hom}_R$
 (in particularly taking duals, i.e., $\operatorname{Hom}_R(\cdot, R)$)
@@ -175,7 +175,7 @@ $\operatorname{Hom}_R(X, Y) \simeq X^* \otimes Y
 
 \begin{frame}{Dual of a Tensor Product}
 \begin{block}{Note}
-If $U,V$ are finite free $R$–modules, then there is a canonical isomorphism
+If $U,V$ are finite-dimensional $R$–modules, then there is a canonical isomorphism
 \begin{align*}
     (U\otimes_R V)^*\ &\cong\ \operatorname{Hom}_R(U\otimes V,R)\\\ &\cong\ \operatorname{Hom}_R\!\big(U,\operatorname{Hom}_R(V,R)\big)
 \ \cong\ U^*\otimes_R V^*.
@@ -183,7 +183,7 @@ If $U,V$ are finite free $R$–modules, then there is a canonical isomorphism
 
 \end{block}
 \begin{proof}
-Use the currying isomorphism $\operatorname{Hom}_R(U\otimes V,R)\cong \mathcal{L}(U,V;R)$ and then apply $\rho: U^*\otimes V^* \xrightarrow{\sim} \mathcal{L}(U,V;R)$ (finite free case). Naturality shows canonicity.
+Use the currying isomorphism $\operatorname{Hom}_R(U\otimes V,R)\cong \mathcal{L}(U,V;R)$ and then apply $\rho: U^*\otimes V^* \xrightarrow{\sim} \mathcal{L}(U,V;R)$ (finite-dimensional case). Naturality shows canonicity.
 \end{proof}
 \end{frame}
 
@@ -227,7 +227,7 @@ and dually, given $h:W\to U$, $k:W\to V$, there is a unique $R$–linear map
 \end{frame}
 
 \begin{frame}{Basic Properties}
-\begin{block}{Finite bases and dimension.} If $U,V$ are finite free with bases $e=(e_1,\dots,e_m)$ and $f=(f_1,\dots,f_n)$, then
+\begin{block}{Finite bases and dimension.} If $U,V$ are finite-dimensional with bases $e=(e_1,\dots,e_m)$ and $f=(f_1,\dots,f_n)$, then
 \[
 \{\,e_1\oplus 0,\dots, e_m\oplus 0,\ 0\oplus f_1,\dots,0\oplus f_n\,\}
 \]
@@ -515,7 +515,7 @@ Concretely, moving $v_1$ past $w_1,w_2,w_3$ produces $3$ sign flips, and moving 
 \begin{frame}{Summary}
 \begin{itemize}
 \item $U\otimes_R V$ represents bilinear maps: $\operatorname{Hom}_R(U\otimes V,W)\cong \mathcal{L}(U,V;W)$; basis tensors $e_i\otimes f_j$ give $\dim(U\otimes V)=\dim U\cdot \dim V$.
-\item Canonical isomorphisms: $U\otimes V \cong V\otimes U$, $R\otimes U \cong U$, and $\rho:U^*\otimes V\to \operatorname{Hom}_R(U,V)$ (iso in finite free cases).
+\item Canonical isomorphisms: $U\otimes V \cong V\otimes U$, $R\otimes U \cong U$, and $\rho:U^*\otimes V\to \operatorname{Hom}_R(U,V)$ (iso in finite-dimensional cases).
 \item Direct sums: $U\oplus V$ has block basis and $\dim(U\oplus V)=\dim U+\dim V$; $(U\oplus V)\otimes W \cong (U\otimes W)\oplus (V\otimes W)$; $(U\oplus V)^*\cong U^*\oplus V^*$.
 \item $R$–algebras: $R$–modules with a bilinear product; polynomial algebras are associative, unital, commutative.
 \item Tensor algebra $T(V)=\bigoplus_{i\ge 0} V^{\otimes i}$ is graded; $\dim T^i(V)= (\dim V)^i$.
