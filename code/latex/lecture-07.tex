@@ -146,7 +146,11 @@ and $\rho(e^i\otimes v_j)$ is the rank–one map $u\mapsto e^i(u)\,v_j$. These $
 \begin{frame}{A Structural Corollary}
 \vspace{-0.3cm}
 \begin{block}{Corollary (Polarization into $V$ and $V^*$)}
-Let $R$ be a CRWU and $V$ a finite free $R$–module. Any $R$–module obtained from $V$ by iterating constructions using $R$–modules, tensor products, and $\operatorname{Hom}_R$ is (noncanonically) isomorphic to
+Let $R$ be a CRWU and $V$ a finite dimensional $R$–module.
+Any $R$–module obtained from $V$ and $R$ by iterating constructions using
+tensor products and $\operatorname{Hom}_R$
+(in particularly taking duals, i.e., $\operatorname{Hom}_R(\cdot, R)$)
+is canonically isomorphic to
 \[
 \underbrace{V\otimes\cdots\otimes V}_{m\ \text{times}}\ \otimes\
 \underbrace{V^*\otimes\cdots\otimes V^*}_{n\ \text{times}}
@@ -155,8 +159,17 @@ Let $R$ be a CRWU and $V$ a finite free $R$–module. Any $R$–module obtained 
 \end{block}
 \vspace{-0.3cm}
 \begin{proof}
-Proceed by structural induction on the expression. The base objects are $V$ and $R$ (which is $V^{\otimes 0}$).
-For $\operatorname{Hom}_R(U,W)$ use the finite free isomorphism $U^*\otimes W \cong \operatorname{Hom}_R(U,W)$; for a tensor $X\otimes Y$ concatenate the tensor powers; for direct factors already of the form $V^{\otimes m}\otimes (V^*)^{\otimes n}$ the claim is immediate. Each step keeps the expression within a tensor power of $V$ and $V^*$.
+Proceed by structural induction on the set $S$ of such expressions.
+The base objects $V$ and $R$ are in $S$.
+Now take
+$X = V^{\otimes m} \otimes (V^*)^{\otimes n} \in S$ and
+$Y = V^{\otimes p} \otimes (V^*)^{\otimes q} \in S$
+for some $m, n, p, q \in \mathbb{N}$.
+Then
+$X \otimes Y \simeq V^{\otimes (m + p)} \otimes (V^*)^{\otimes (n + q)} \in S$
+and
+$\operatorname{Hom}_R(X, Y) \simeq X^* \otimes Y
+\simeq V^{\otimes (n + p)} \otimes (V^*)^{\otimes (m + q)} \in S$.
 \end{proof}
 \end{frame}
 
