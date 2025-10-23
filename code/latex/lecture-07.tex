@@ -225,22 +225,22 @@ hence $\dim(U\oplus V)=\dim U+\dim V=m+n$.
 
 \begin{frame}{Example}
 \vspace{-0.3cm}
-\begin{block}{$\mathbb{R}\otimes \mathbb{R}^2 \simeq \mathbb{R}^3$}
+\begin{block}{$\mathbb{R} \oplus \mathbb{R}^2 \simeq \mathbb{R}^3$}
 Let $R=\mathbb{R}$.
-Take $\mathbb{R}$ as a $1$–dimensional real module with standard basis $e_1=1$, and let $\mathbb{R}^2$ have basis $f_1=(1,0), \quad f_2=(0,1).$
-Then the tensor product $\mathbb{R}\otimes \mathbb{R}^2$ has basis $\{\, e_1\otimes f_1,\ e_1\otimes f_2 \,\}.$ Now consider $\mathbb{R}\otimes \mathbb{R}^2$ as a subspace of $\mathbb{R}^3$ under the canonical isomorphism
-\vspace{-0.3cm}
-\begin{align*}
-\lambda_{\mathbb{R}^2}:\mathbb{R}\otimes \mathbb{R}^2 \longrightarrow \mathbb{R}^3, \qquad
-\lambda_{\mathbb{R}^2}(r\otimes (a,b)) = r(1,a,b) = (r, ra, rb).
-\end{align*}
-Hence the basis of $\mathbb{R}\otimes \mathbb{R}^2$ corresponds to
-\vspace{-0.3cm}
-\begin{align*}
-\lambda_{\mathbb{R}^2}(1\otimes f_1)=(1,1,0), \qquad
-\lambda_{\mathbb{R}^2}(1\otimes f_2)=(1,0,1),
-\end{align*}
-and the image spans $\mathbb{R}^3$. Thus we obtain the natural isomorphism $\mathbb{R}\otimes \mathbb{R}^2 \ \cong\ \mathbb{R}^3,$ whose basis corresponds to $\{\,1\otimes f_1,\ 1\otimes f_2,\ 1\otimes (f_1+f_2)\,\}$ forming the standard coordinate directions in $\mathbb{R}^3$.
+Take $\mathbb{R}$ as a $1$–dimensional real module with the standard basis $e_1 = 1$,
+and $\mathbb{R}^2$ with the standard basis $f_1 = (1, 0),\ f_2 = (0, 1).$
+Then the direct sum $\mathbb{R} \oplus \mathbb{R}^2$ comes with the basis
+\[
+\mathcal{B} = \{e_1 \oplus 0_{\mathbb{R}^2},\ 0 \oplus f_1,\ 0 \oplus f_2\}.
+\]
+Expanded, $\mathcal{B}$ becomes
+\[
+\mathcal{B} = \{1 \oplus (0, 0),\ 0 \oplus (1, 0),\ 0 \oplus (0, 1)\}.
+\]
+We see that $\mathcal{B}$ is equivalent to the standard basis of $\mathbb{R}^3$:
+\[
+\mathcal{B}' = \{(1, 0, 0),\ (0, 1, 0),\ (0, 0, 1)\}.
+\]
 \end{block}
 \end{frame}
 
