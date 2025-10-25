@@ -74,7 +74,7 @@ Let \(\varphi\) and \(\psi\) be logical statements (predicates). We have:
 \neg (\neg \varphi) &\equiv \varphi &\text{ (negation)}, \\
 \varphi \land \psi &\text{ (conjunction/logical AND)}, \\
 \varphi \lor \psi &\text{ (disjunction/logical OR)}, \\
-\varphi \implies \psi &\text{ (implication)}, \\
+\varphi \Rightarrow \psi &\text{ (implication)}, \\
 \varphi \iff \psi &\text{ (bi-conditional, equivalence)}.
 \end{aligned}
 \end{align*}
@@ -82,7 +82,7 @@ Let \(\varphi\) and \(\psi\) be logical statements (predicates). We have:
 
 Some equivalences:
 \begin{align*}
-\varphi \implies \psi \;\equiv\; \neg \varphi \lor \psi, \quad
+\varphi \Rightarrow \psi \;\equiv\; \neg \varphi \lor \psi, \quad
 \neg(\varphi \land \psi) \equiv \neg \varphi \lor \neg \psi \quad (\text{De Morgan}), \dots
 \end{align*}
 \end{frame}
@@ -109,13 +109,13 @@ Negation rules:
 Let \(I \subset \mathbb{R}\) be an interval, \(f: I \to \mathbb{R}\). We say \(f\) is continuous if
 \begin{align*}
 \forall x \in I,\; \forall \varepsilon>0,\; \exists \delta>0,\; \forall y \in I,\;
-|x-y|<\delta \implies |f(x) - f(y)| < \varepsilon.
+|x-y|<\delta \Rightarrow |f(x) - f(y)| < \varepsilon.
 \end{align*}
 \end{block}
 \begin{block}{Uniform continuity} \(f\) is uniformly continuous if
 \begin{align*}
 \forall \varepsilon>0,\; \exists \delta>0,\; \forall x,y \in I,\;
-|x-y|<\delta \implies |f(x) - f(y)| < \varepsilon.
+|x-y|<\delta \Rightarrow |f(x) - f(y)| < \varepsilon.
 \end{align*}
 \end{block}
 \vspace{-0.8cm}
@@ -311,7 +311,7 @@ Let \(f: X \to Y\).
 \begin{itemize}
   \item \(f\) is \textbf{injective} (one-to-one) if
   \begin{align*}
-    \forall x_1, x_2 \in X,\; f(x_1) = f(x_2) \implies x_1 = x_2.
+    \forall x_1, x_2 \in X,\; f(x_1) = f(x_2) \Rightarrow x_1 = x_2.
   \end{align*}
   \item \(f\) is \textbf{surjective} (onto) if
   \begin{align*}
@@ -361,7 +361,7 @@ Let \(f: X \to Y\).
 Assume there exists \(g:Y\to X\) such that \(g\circ f = \mathrm{id}_X.\)
 Let \(f(x_1)=f(x_2)\). Applying \(g\) to both sides gives
 \[
-g(f(x_1)) = g(f(x_2)) \implies \mathrm{id}_X(x_1) = \mathrm{id}_X(x_2) \implies x_1 = x_2.
+g(f(x_1)) = g(f(x_2)) \Rightarrow \mathrm{id}_X(x_1) = \mathrm{id}_X(x_2) \Rightarrow x_1 = x_2.
 \]
 Thus \(f\) is injective.
 
@@ -667,8 +667,8 @@ Since \(f\) is both injective and surjective, \(f\) is bijective. \(\square\)
 Prove or disprove:
 \begin{enumerate}
     \item $f$ injective $\iff$ $f$ has a left inverse.
-    \item $f$ has right inverse $\implies$ $f$ surjective.
-    \item $f$ surjective $\implies$ $f$ has right inverse.
+    \item $f$ has right inverse $\Rightarrow$ $f$ surjective.
+    \item $f$ surjective $\Rightarrow$ $f$ has right inverse.
     \item $f$ bijective $\iff$ $f$ invertible.
     \item Decomposition into fibers is indeed a disjoint union: $E = \bigsqcup_{x\in M} E_x$ is a disjoint decomposition into fibers.\\
     If \(\pi: E \to M\) is a surjection, then \(E = \bigsqcup_{x\in M} \pi^{-1}(x)\) and for \(x \neq y\), \(\pi^{-1}(x) \cap \pi^{-1}(y) = \emptyset.\)
