@@ -570,20 +570,20 @@ do not vanish simultaneously (equivalently $f_u\times f_v\neq 0$).
 \begin{frame}{Spherical Coordinates}
 \vspace{-0.2cm}
 \begin{block}{Immersion of $S^2$}
-\textbf{Parametrization.} Let $(\varphi,\theta)\in(0,\pi)\times(0,2\pi)$ and define
+\textbf{Parametrization.} Let $(\theta,\varphi)\in(0,\pi)\times(0,2\pi)$ and define
 \vspace{-0.3cm}
 \begin{align*}
-\sigma(\varphi,\theta)
-=\big(\sin\varphi\cos\theta,\ \sin\varphi\sin\theta,\ \cos\varphi\big).
+f(\theta,\varphi)
+=\big(\sin\theta\cos\varphi,\ \sin\theta\sin\varphi,\ \cos\theta\big).
 \end{align*}
 Then
 \vspace{-0.3cm}
 \begin{align*}
-\sigma_\varphi&=(\cos\varphi\cos\theta,\ \cos\varphi\sin\theta,\ -\sin\varphi),\\
-\sigma_\theta&=(-\sin\varphi\sin\theta,\ \sin\varphi\cos\theta,\ 0).
+\partial f / (\partial \theta)&=(\cos\theta\cos\varphi,\ \cos\theta\sin\varphi,\ -\sin\theta)^T,\\
+\partial f / (\partial \varphi)&=(-\sin\theta\sin\varphi,\ \sin\theta\cos\varphi,\ 0)^T.
 \end{align*}
-\textbf{Rank condition.} The $3\times 2$ Jacobian $[\ \sigma_\varphi\ \ \sigma_\theta\ ]$ has rank $2$ whenever $\sin\varphi\neq 0$, i.e.\ for $\varphi\in(0,\pi)$, hence $\sigma$ is an immersion on that open strip.\\
-\textbf{Singularities (poles).} At $\varphi=0$ (north pole) or $\varphi=\pi$ (south pole), $\sin\varphi=0$ and thus $\sigma_\theta=0$, so $\operatorname{rank} D\sigma \le 1$; these are \emph{singular points} for this chart.
+\textbf{Rank condition.} The $3\times 2$ Jacobian $[\ \partial f / (\partial \theta)\ \ \partial f / (\partial \varphi)\ ]$ has rank $2$ whenever $\sin\theta\neq 0$, i.e.\ for $\theta\in(0,\pi)$, hence $f$ is an immersion on that open strip.\\
+\textbf{Singularities (poles).} At $\theta=0$ (north pole) or $\theta=\pi$ (south pole), $\sin\theta=0$ and thus $\partial f / (\partial \varphi)=0$, so $\operatorname{rank} Df \le 1$; these are \emph{singular points} for this chart.
 \end{block}
 \end{frame}
 
@@ -592,8 +592,8 @@ Then
 \begin{frame}{Spherical Coordinates}
 \begin{block}{Geometry.}
 \begin{itemize}
-\item Fixing $\theta$ traces a \emph{meridian} (e.g.\ the Greenwich meridian at $\theta=0$).
-\item Fixing $\varphi$ traces a \emph{parallel} (latitude circle); $\varphi=\pi/2$ is the equator.
+\item Fixing $\varphi$ traces a \emph{meridian} (e.g.\ the Greenwich meridian at $\varphi=0$).
+\item Fixing $\theta$ traces a \emph{parallel} (latitude circle); $\theta=\pi/2$ is the equator.
 \end{itemize}
 
 \textbf{Charts.} The sphere needs at least two charts to avoid the pole singularities; e.g.\ one chart missing the north pole and one missing the south pole.
