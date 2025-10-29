@@ -1,2 +1,5 @@
+# Ignore automatically generated MacOS files 
 .DS_Store
+
+# Ignore the build directory: everything generated goes there
 build/**
