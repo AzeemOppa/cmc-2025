@@ -13,7 +13,7 @@
 \begin{frame}{Proposition}
 \vspace{-0.3cm}
 \begin{block}{$\dim \operatorname{Hom}_R(V,W) = (\dim V)(\dim W)$}
-Let $R$ be a commutative ring with unity (CRWU). Let $V,W$ be finite free $R$–modules with
+Let $R$ be a commutative ring with unity (CRWU). Let $V,W$ be finite-dimensional $R$–modules with
 \[
 \dim V = n,\qquad \dim W = m.
 \]
@@ -61,7 +61,7 @@ V^* := \operatorname{Hom}_R(V,R) \left[= \{f: V\to R|f\text{ is linear}\}\right]
 \end{block}
 \end{frame}
 
-\begin{frame}{Finite Free Case}
+\begin{frame}{Finite-dimensional Case}
 
 \begin{block}{Remark: Dimension and Basis Dependence}
 Let $R$ be a commutative ring with unity (CRWU), and let $V$ be a finite--dimensional (free) $R$--module.
@@ -76,7 +76,7 @@ If $V$ has basis $\{e_1,\dots,e_n\}$, the dual module $V^*$ has the dual basis $
 Although $\dim V = \dim V^*$ and we can identify them under a fixed basis, such identification is artificial - only the double dual $V^{**}$ can be identified with $V$ \emph{canonically}.
 \end{frame}
 
-\begin{frame}{Finite Free Case}
+\begin{frame}{Finite-dimensional Case}
 \vspace{-0.2cm}
 \begin{block}{Interpretation.}
 \begin{itemize}
@@ -95,7 +95,7 @@ Although $\dim V = \dim V^*$ and we can identify them under a fixed basis, such 
 
 \begin{frame}{Dual Basis}
 \begin{block}{Kronecker Delta}
-    Let $V$ be finite free with ordered basis $e=(e_1,\dots,e_n)$. The \emph{dual basis} $e^*=(e^1,\dots,e^n)$ is the family of linear forms $e^i:V\to R$ defined by
+    Let $V$ be finite-dimensional with ordered basis $e=(e_1,\dots,e_n)$. The \emph{dual basis} $e^*=(e^1,\dots,e^n)$ is the family of linear forms $e^i:V\to R$ defined by
 \[
 e^i(e_j)=\delta^i_j\quad (1\le i,j\le n),
 \]
@@ -118,7 +118,7 @@ e^1(x_1,x_2)=x_1,\qquad e^2(x_1,x_2)=x_2.
 \begin{frame}{Reconstruction via Dual Basis}
 \vspace{-0.2cm}
 \begin{block}{Proposition}
-Let $V$ be finite free, $e=(e_1,\dots,e_n)$ a basis and $e^*=(e^1,\dots,e^n)$ its dual. Then for every $v\in V$,
+Let $V$ be finite-dimensional, $e=(e_1,\dots,e_n)$ a basis and $e^*=(e^1,\dots,e^n)$ its dual. Then for every $v\in V$,
 \[
 v=\sum_{i=1}^n e^i(v)\, e_i.
 \]
@@ -247,7 +247,7 @@ is $R$–linear. In evaluation form, for $g\in W^*$ and $v\in V$,
 \end{frame}
 
 \begin{frame}{Corollary: Coordinates via Dual Basis}
-Let $R$ be a CRWU, $V,W$ finite free $R$–modules with ordered bases
+Let $R$ be a CRWU, $V,W$ finite-dimensional $R$–modules with ordered bases
 \[
 e=(e_1,\dots,e_n)\text{ of }V,\qquad f=(f_1,\dots,f_m)\text{ of }W,
 \]
@@ -272,7 +272,7 @@ By definition of the dual basis, any $w\in W$ decomposes as $w=\sum_i f^i(w)f_i$
 \begin{frame}{Proposition}
 \vspace{-0.2cm}
 \begin{block}{Matrix of $\phi^*$ is the Transpose of $(\phi)_e^f$}
-    Let $V,W$ be finite free, $e=(e_1,\dots,e_n)$, $f=(f_1,\dots,f_m)$ with dual bases $e^*=(e^1,\dots,e^n)$, $f^*=(f^1,\dots,f^m)$. For $\phi\in\operatorname{Hom}_R(V,W)$,
+    Let $V,W$ be finite-dimensional, $e=(e_1,\dots,e_n)$, $f=(f_1,\dots,f_m)$ with dual bases $e^*=(e^1,\dots,e^n)$, $f^*=(f^1,\dots,f^m)$. For $\phi\in\operatorname{Hom}_R(V,W)$,
 \[
 (\phi^*)_{f^*}^{e^*} = \left((\phi)_e^f\right)^{\!T}.
 \]
@@ -384,7 +384,7 @@ The dual map $\phi^*$ is defined by $(\phi^* f)(u) = f(\phi(u))$, where $f \in V
 
 \begin{frame}{Proposition}
 
-\begin{block}{Finite Free Case} If $V$ is finite free, then $\iota$ is an isomorphism; we write $V \simeq V^{**}$ \emph{canonically}.
+\begin{block}{Finite-dimensional Case} If $V$ is finite-dimensional, then $\iota$ is an isomorphism; we write $V \simeq V^{**}$ \emph{canonically}.
 
 \end{block}
 
@@ -396,7 +396,7 @@ Fix a basis $e=(e_1,\dots,e_n)$ with dual $e^*=(e^1,\dots,e^n)$. Then $\iota(e_j
 \begin{frame}{Naturality with Respect to Double Dual}
 \vspace{-0.5cm}
 \begin{block}{}
-Let $V,W$ be finite free, and $\phi\in\operatorname{Hom}_R(V,W)$. The double dual map $\phi^{**}:V^{**}\to W^{**}$ is defined by
+Let $V,W$ be finite-dimensional, and $\phi\in\operatorname{Hom}_R(V,W)$. The double dual map $\phi^{**}:V^{**}\to W^{**}$ is defined by
 \[
 \phi^{**}(\Lambda):= \Lambda\circ \phi^*,\qquad (\Lambda\in V^{**}).
 \]

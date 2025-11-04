@@ -30,7 +30,7 @@ Let $R$ be a commutative ring with unity (CRWU), and let $V$ be an $R$–module.
 
 
 \begin{block}{Theorem }
-Let $R$ be a CRWU and $V$ a finite free $R$–module. If $E$ and $F$ are bases of $V$, then
+Let $R$ be a CRWU and $V$ a finite-dimensional $R$–module. If $E$ and $F$ are bases of $V$, then
 \[
 \dim_E V = \dim_F V.
 \]
@@ -38,7 +38,7 @@ We therefore denote the unique value by $\dim V$ and call it the \emph{rank} of 
 \end{block}
 \textbf{Proof}
 It suffices to show: if $R^m \cong R^n$ as $R$–modules, then $m=n$.
-Indeed, a finite free module $V$ with a basis of size $m$ is isomorphic to $R^m$, so any two bases yield $R^m \cong R^n$.
+Indeed, a finite-dimensional module $V$ with a basis of size $m$ is isomorphic to $R^m$, so any two bases yield $R^m \cong R^n$.
 
 Let $\mathfrak m$ be a maximal ideal of $R$; then $k:=R/\mathfrak m$ is a field. Tensoring the isomorphism $R^m \cong R^n$ with $k$ over $R$ gives
 \[
@@ -54,7 +54,7 @@ k \otimes_R R^m \cong k^m,\qquad k \otimes_R R^n \cong k^n
 \]
 as $k$–vector spaces. Hence $k^m \cong k^n$ as vector spaces, so $m=n$.
 
-Therefore, any two bases of a finite free $R$–module have the same cardinality.
+Therefore, any two bases of a finite-dimensional $R$–module have the same cardinality.
 \end{block}
 
 \textbf{Interpretation:}
@@ -443,7 +443,7 @@ By the previous proposition, $f$ is linear and bijective (its inverse sends $\su
 %============================================================
 
 \begin{frame}{Coordinate Map with Respect to a Basis}
-Let $R$ be a CRWU and $V$ a finite free $R$–module with ordered basis $e=(e_1,\dots,e_n)$.
+Let $R$ be a CRWU and $V$ a finite-dimensional $R$–module with ordered basis $e=(e_1,\dots,e_n)$.
 
 \textbf{Definition (Coordinates).}
 For $v\in V$ written uniquely as $v=\lambda_1 e_1+\cdots+\lambda_n e_n$, define
@@ -554,7 +554,7 @@ h^e(p)=\begin{pmatrix}-3a_0+2a_1\\ -3a_1+4a_2\\ -3a_2\end{pmatrix}.
 
 \begin{frame}{Matrix of a Linear Map}
 \begin{block}{}
-    Let $V,W$ be finite free $R$–modules, with ordered bases
+    Let $V,W$ be finite-dimensional $R$–modules, with ordered bases
 \[
 e=(e_1,\dots,e_n) \text{ for } V,\qquad f=(f_1,\dots,f_m) \text{ for } W.
 \]
@@ -600,7 +600,7 @@ Hence
 
 
 \begin{frame}{Composition Corresponds to Matrix Product}
-Let $U,V,W$ be finite free $R$–modules with ordered bases
+Let $U,V,W$ be finite-dimensional $R$–modules with ordered bases
 \[
 e=(e_1,\dots,e_p),\quad f=(f_1,\dots,f_m),\quad g=(g_1,\dots,g_n).
 \]
@@ -647,7 +647,7 @@ Thus the $(k,j)$–entry of $(B\circ A)_e^g$ is $\sum_i \beta_{ki}\alpha_{ij}$, 
 
 \begin{frame}{Summary}
 \begin{itemize}
-  \item Defined free and finite–dimensional $R$–modules; proved dimension is well–defined for finite free modules (IBN via reduction mod maximal ideals).
+  \item Defined free and finite–dimensional $R$–modules; proved dimension is well–defined for finite-dimensional modules (IBN via reduction mod maximal ideals).
   \item Computed dimensions of $R^n$, $M_{m\times n}(R)$, $\mathbf{0}$, and $R[x]$.
   \item Defined span; proved image of a matrix equals the span of its columns; proved span is a submodule.
   \item Defined linear maps; verified linearity in key examples (zero, identity, matrix, integral).
