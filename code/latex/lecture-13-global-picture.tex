@@ -43,21 +43,21 @@
 \node[box=white] (LD)  at (\xL,\yTop-4*\dy) {$\Omega^{D}$};
 
 % UPWARD d_p ARROWS (exterior derivative) – slightly shifted left and shortened
-\draw[->,shorten >=1pt, shorten <=1pt] ([xshift=-0.10cm]L0.west) -- node[lbl,sloped,above] {$d_0$} ([xshift=-0.10cm]L1.west);
+\draw[->,shorten >=1pt, shorten <=1pt] ([xshift=-0.10cm]L0.west) -- node[lbl,left] {$d_0$} ([xshift=-0.10cm]L1.west);
 
 % \draw[->,shorten >=1pt, shorten <=1pt] ([xshift=-0.10cm]L1.west) -- node[lbl,sloped,above,yshift=0.5pt] {$d_1$} +([xshift = -0.10cm]0,-0.95) coordinate (tmpd);
 
 \draw[dashed] ([xshift=-0.10cm]L1.west) -- ++(0,-0.65); % Dashed middle section
 
-\draw[->,shorten >=1pt,shorten <=1pt] ([xshift=-0.10cm]LDm.west) -- node[lbl,sloped,above] {$d_{D-1}$} ([xshift=-0.10cm]LD.west);
+\draw[->,shorten >=1pt,shorten <=1pt] ([xshift=-0.10cm]LDm.west) -- node[lbl,left] {$d_{D-1}$} ([xshift=-0.10cm]LD.west);
 
 % To fine-tune:
 % - adjust xshift (currently -0.10cm) → move arrows further left or right
 % - adjust shorten >= / <= (currently 1pt) → shorten or lengthen arrow tips
 % DOWNWARD d_p^* ARROWS (codifferential)
-\draw[->] (L1) -- node[lbl,sloped,above] {$d_1^{*}$} (L0);
+\draw[->] (L1) -- node[lbl,right] {$d_1^{*}$} (L0);
 \draw[dashed,->] ($(L1)+(0,-0.65)$) -- node[lbl,left] {$\cdots$} ($(LDm)+(0,0.65)$);
-\draw[->] (LD) -- node[lbl,sloped,above] {$d_{D}^{*}$} (LDm);
+\draw[->] (LD) -- node[lbl,right] {$d_{D}^{*}$} (LDm);
 
 
 % ==============================
@@ -71,14 +71,14 @@
 
 
 % OPTIONAL: Faint d operators on right column – shifted slightly left
-\draw[<-,gray!60,shorten >=1pt,shorten <=1pt] ([xshift=-0.10cm]R0.west) -- node[lbl,sloped,above] {$d_{D-1}$} ([xshift=-0.10cm]R1.west);
+\draw[<-,gray!60,shorten >=1pt,shorten <=1pt] ([xshift=-0.10cm]R0.west) -- node[lbl,left] {$d_{D-1}$} ([xshift=-0.10cm]R1.west);
 \draw[dashed,gray!60] ([xshift=-0.10cm]R1.west) -- ++(0,-0.65);
-\draw[<-,gray!60,shorten >=1pt,shorten <=1pt] ([xshift=-0.10cm]RDm.west) -- node[lbl,sloped,above] {$d_{0}$} ([xshift=-0.10cm]RD.west);
+\draw[<-,gray!60,shorten >=1pt,shorten <=1pt] ([xshift=-0.10cm]RDm.west) -- node[lbl,left] {$d_{0}$} ([xshift=-0.10cm]RD.west);
 
 % OPTIONAL: Faint d^* operators on right column – shifted slightly right and separated
-\draw[->,gray!60,shorten >=1pt,shorten <=1pt] ([xshift=0.12cm]R0.east) -- node[lbl,sloped,below] {$d^{*}_{D}$} ([xshift=0.12cm]R1.east);
+\draw[->,gray!60,shorten >=1pt,shorten <=1pt] ([xshift=0.12cm]R0.east) -- node[lbl,right] {$d^{*}_{D}$} ([xshift=0.12cm]R1.east);
 \draw[dashed,gray!60] ([xshift=0.12cm]R1.east) -- ++(0,-0.65);
-\draw[->,gray!60,shorten >=1pt,shorten <=1pt] ([xshift=0.12cm]RDm.east) -- node[lbl,sloped,below] {$d^{*}_{1}$} ([xshift=0.12cm]RD.east);
+\draw[->,gray!60,shorten >=1pt,shorten <=1pt] ([xshift=0.12cm]RDm.east) -- node[lbl,right] {$d^{*}_{1}$} ([xshift=0.12cm]RD.east);
 
 % To tune:
 
