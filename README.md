@@ -16,7 +16,7 @@ The following Beamer theme is being used:
 <https://github.com/mundya/unofficial-university-of-manchester-beamer>
 
 ## Reference for this course
-```
+```bibtex
 @unpublished{berbatov2025variational,
   author = {Berbatov, Kiprian and Jivkov, Andrey P},
   year = {2025},
