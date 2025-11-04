@@ -166,26 +166,15 @@ A set $\{e_1,\dots,e_n\}$ is a basis of $V$ if it is linearly independent and sp
 \end{block}
 \end{frame}
 
-\begin{frame}{Independence over $\mathbb{Z}$ and $\mathbb{Q}$}
+\begin{frame}{Linear independence over $\mathbb{Z}$ and $\mathbb{Q}$}
 \begin{block}{Example}
-    Let $V=R^2$, $v_1=(2,0)$, $v_2=(3,0)$.
-\begin{enumerate}
-    \item$R=\mathbb{Q}$ (field). If $\lambda_1 v_1 + \lambda_2 v_2 = 0 \Rightarrow (2\lambda_1 + 3\lambda_2, 0)=0$. Thus $2\lambda_1+3\lambda_2=0 \Rightarrow \lambda_1=-\tfrac{3}{2}\lambda_2$.
-For independence we need both $\lambda_1=\lambda_2=0$. Hence $v_1,v_2$ are \textit{not} independent since nontrivial rational coefficients satisfy the equation.\
-    \item $R=\mathbb{Z}$ (integral domain).
-$2\lambda_1+3\lambda_2=0$ implies $\lambda_1=-\tfrac{3}{2}\lambda_2$.
-But coefficients must be integers. The only integer solution is $\lambda_1=\lambda_2=0$.
-Hence $v_1,v_2$ are independent over $\mathbb{Z}$.
-\end{enumerate}
-
-
-\textbf{Conclusion:}
-Independence depends on the underlying ring.
+Let $R$ be $\mathbb{Q}$ or $\mathbb{Z}$, $V = R^2$, $v_1 = (2, 0)$, $v_2 = (3, 0)$.
+Then the vectors $v_1$ and $v_2$ are linearly independent since
+$3 v_1 - 2 v_2 = 0$.
+When $R = \mathbb{Q}$, we can find inverses and so $v_2 = (3 / 2) v_1$.
+However, when $R = \mathbb{Z}$ we cannot one of the vectors as a multiple of the
+other.
 \end{block}
-
-\end{frame}
-
-\begin{frame}{Failure of Division in General Modules}
 \begin{block}{Remark}
 If $R$ is a field and $\mu_1v_1+\dots+\mu_nv_n=0$ with $\mu_i\ne0$, then we can divide:
 \[
