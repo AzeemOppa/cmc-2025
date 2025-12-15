@@ -45,7 +45,7 @@ jobs:
         run: make website
 
       - name: Upload website
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: build/website
           retention-days: ${{ inputs.retention_days }}
